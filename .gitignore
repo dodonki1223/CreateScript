@@ -1,0 +1,8 @@
+﻿#以下のフォルダ・ファイルを除外
+/RunMicrosoftOffice/exe/
+/RunMicrosoftOffice/ico/
+/RunStartUp/ショートカット用/
+/RunStartUp/RunStartUp.vbs
+/ShowShutdownWindowsDialog/exe/
+/ShowShutdownWindowsDialog/ico/
+/CreateSymbolicLink/CreateSymbolicLink.log
