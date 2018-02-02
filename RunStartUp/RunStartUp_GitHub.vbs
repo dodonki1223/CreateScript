@@ -399,7 +399,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     ' ※キー：ファイル名、作成情報：ファイルパス|出力先フォルダ|コマンドライン引数|アイコン情報
     '   ランチャー用に実行されたドライブでショートカットのパスを作りなおす
     '-----------------------------------------------------
-    'ファイル名                                                'ショートカット先                                                                            'ファイルの出力先                                                    'コマンドライン引数                              'アイコンファイル
+    'ファイル名                                                'ショートカット先                                                                            'ファイルの出力先                                                  'コマンドライン引数                                 'アイコンファイル                                                        '作業フォルダ                              
 
     '★StartUp★
     pFileInfo.Add "7+ Taskbar Tweaker.lnk"                    , """" & pRunDrive & "\Tools\7+ Taskbar Tweaker\7+ Taskbar Tweaker.exe"""               & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
@@ -561,7 +561,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     pFileInfo.Add "Writer(Word).lnk"                          , pRunDrive & "\Tools\LibreOfficePortable\LibreOfficeWriterPortable.exe"                & "|" & pRunDrive & "\Tools\Shortcuts\LibreOffice\"
 
     '★Development★
-    pFileInfo.Add "GitBash.lnk"                               , """" & pRunDrive & "\Program Files\Git\git-bash.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
+    pFileInfo.Add "GitBash.lnk"                               , """" & pRunDrive & "\Program Files\Git\git-bash.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & ""                                         & "|" & """" & pRunDrive & "\Program Files\Git\git-bash.exe"""            & "|" & "%UserProfile%\LaravelProjects\Homestead"
     pFileInfo.Add "HeidiSQL.lnk"                              , pRunDrive & "\Tools\HeidiSQL\heidisql.exe"                                            & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
     pFileInfo.Add "RLogin.lnk"                                , pRunDrive & "\Tools\RLogin\RLogin.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
     pFileInfo.Add "SourceTree.lnk"                            , "%UserProfile%\AppData\Local\SourceTree\SourceTree.exe"                               & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
