@@ -126,10 +126,11 @@ Sub Main()
         CreateNotExistFolder(path)
 
         'ショートカットオブジェクトを作成し出力先パス、コマンドライン引数、アイコンを指定
-        Set shortCut = objShell.CreateShortcut(path)                           'ショートカットオブジェクトを作成
-        shortCut.TargetPath = aryFileInfo(0)                                   'ショートカット先
-        If UBound(aryFileInfo) > 1 Then shortCut.Arguments = aryFileInfo(2)    'コマンドライン引数設定
-        If UBound(aryFileInfo) > 2 Then shortCut.IconLocation = aryFileInfo(3) 'アイコン情報を設定
+        Set shortCut = objShell.CreateShortcut(path)                               'ショートカットオブジェクトを作成
+        shortCut.TargetPath = aryFileInfo(0)                                       'ショートカット先
+        If UBound(aryFileInfo) > 1 Then shortCut.Arguments        = aryFileInfo(2) 'コマンドライン引数設定
+        If UBound(aryFileInfo) > 2 Then shortCut.IconLocation     = aryFileInfo(3) 'アイコン情報を設定
+        If UBound(aryFileInfo) > 3 Then shortCut.WorkingDirectory = aryFileInfo(4) '作業フォルダを設定
 
         'ショートカットを作成
         shortCut.Save
