@@ -562,22 +562,20 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     pFileInfo.Add "Writer(Word).lnk"                          , pRunDrive & "\Tools\LibreOfficePortable\LibreOfficeWriterPortable.exe"                & "|" & pRunDrive & "\Tools\Shortcuts\LibreOffice\"
 
     'ÅöDevelopmentÅö
-    pFileInfo.Add "GitBash.lnk"                               , """" & pRunDrive & "\Program Files\Git\git-bash.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & ""                                         & "|" & """" & pRunDrive & "\Program Files\Git\git-bash.exe"""            & "|" & "%UserProfile%\LaravelProjects\Homestead"
+    pFileInfo.Add "A5SQL Mk-2.lnk"                            , pRunDrive & "\Tools\A5SQLMk-2\A5M2.exe"                                               & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
     pFileInfo.Add "HeidiSQL.lnk"                              , pRunDrive & "\Tools\HeidiSQL\heidisql.exe"                                            & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
     pFileInfo.Add "RLogin.lnk"                                , pRunDrive & "\Tools\RLogin\RLogin.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
-    pFileInfo.Add "SourceTree.lnk"                            , "%UserProfile%\AppData\Local\SourceTree\SourceTree.exe"                               & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
     pFileInfo.Add "WinMerge.lnk"                              , pRunDrive & "\Tools\WinMergePortable\WinMergePortable.exe"                            & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
     pFileInfo.Add "Zeal.lnk"                                  , pRunDrive & "\Tools\zeal-portable\zeal.exe"                                           & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
 
     Select Case runKbn
 
-        Case "Company"
+        Case "Company", "House", "GPDWIN"
 
-            pFileInfo.Add "Visual Studio 2017.lnk"                    , "%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe"  & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
-
-        Case "House", "GPDWIN"
-
-            pFileInfo.Add "Visual Studio 2015.lnk"                    , "%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe"            & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
+            pFileInfo.Add "GitBash.lnk"                               , """" & pRunDrive & "\Program Files\Git\git-bash.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & ""                                         & "|" & """" & pRunDrive & "\Program Files\Git\git-bash.exe"""            & "|" & "%UserProfile%\LaravelProjects\Homestead"
+            pFileInfo.Add "Oracle VM VirtualBox.lnk"                  , """" & pRunDrive & "\Program Files\Oracle\VirtualBox\VirtualBox.exe"""                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
+            pFileInfo.Add "SourceTree.lnk"                            , "%UserProfile%\AppData\Local\SourceTree\SourceTree.exe"                               & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
+            pFileInfo.Add "Visual Studio 2017.lnk"                    , "%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe"   & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
 
     End Select
 
