@@ -606,6 +606,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     pFileInfo.Add "makeexe.lnk"                               , pRunDrive & "\Tools\makeexe\"                                                         & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
     pFileInfo.Add "Meiryo UI‚à‘åŒ™‚¢!!.lnk"                   , pRunDrive & "\Tools\noMeiryoUI\noMeiryoUI.exe"                                        & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
     pFileInfo.Add "pointClip.lnk"                             , pRunDrive & "\Tools\PointClip\pointClip.exe"                                          & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
+    pFileInfo.Add "RoboCopyGUI.lnk"                           , pRunDrive & "\Tools\RoboCopyGUI\RoboCopyGUI.exe"                                      & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
     pFileInfo.Add "RunSpp.lnk"                                , pRunDrive & "\Tools\SPP\RunSpp.bat"                                                   & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
     pFileInfo.Add "StopWatchD.lnk"                            , pRunDrive & "\Tools\StopWatchD\StopWatchD.exe"                                        & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
     pFileInfo.Add "VeraCrypt.lnk"                             , pRunDrive & "\Tools\VeraCrypt\VeraCrypt.exe"                                          & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
