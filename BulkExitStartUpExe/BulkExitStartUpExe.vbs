@@ -76,6 +76,19 @@ Function AddExitExe(ByVal pExitExes)
 
     End If
 
+    'AkabeiMonitorの終了可否
+    Dim mIsRunAkabeiMonitor : mIsRunAkabeiMonitor = IsRunProgram("akamoni.exe")
+    If mIsRunAkabeiMonitor = True Then
+
+        Dim mAkabeiMonitorExitResult : mAkabeiMonitorExitResult = GetSelectedUserResultForExitProgram("AkabeiMonitorを終了しますか？", "AkabeiMonitor終了可否")
+        If mAkabeiMonitorExitResult = vbYes Then
+
+            pExitExes.Add "AkabeiMonitor", "akamoni.exe"
+
+        End If
+
+    End If
+
     'AutoHotKeyToolの終了可否
     Dim mIsRunAutoHotKeyTool : mIsRunAutoHotKeyTool = IsRunProgram("AutoHotKeyTool.exe")
     If mIsRunAutoHotKeyTool = True Then
@@ -262,7 +275,6 @@ Function AddExitExe(ByVal pExitExes)
 
     End If
 
-
     'SuperF4の終了可否
     Dim mIsRunSuperF4 : mIsRunSuperF4 = IsRunProgram("SuperF4.exe")
     If mIsRunSuperF4 = True Then
@@ -276,16 +288,14 @@ Function AddExitExe(ByVal pExitExes)
 
     End If
 
+    'TransStickiesの終了可否
+    Dim mIsRunTransStickies : mIsRunTransStickies = IsRunProgram("TransStickies.exe")
+    If mIsRunTransStickies = True Then
 
+        Dim mTransStickiesExitResult : mTransStickiesExitResult = GetSelectedUserResultForExitProgram("TransStickiesを終了しますか？", "TransStickies終了可否")
+        If mTransStickiesExitResult = vbYes Then
 
-    'AkabeiMonitorの終了可否
-    Dim mIsRunAkabeiMonitor : mIsRunAkabeiMonitor = IsRunProgram("akamoni.exe")
-    If mIsRunAkabeiMonitor = True Then
-
-        Dim mAkabeiMonitorExitResult : mAkabeiMonitorExitResult = GetSelectedUserResultForExitProgram("AkabeiMonitorを終了しますか？", "AkabeiMonitor終了可否")
-        If mAkabeiMonitorExitResult = vbYes Then
-
-            pExitExes.Add "AkabeiMonitor", "akamoni.exe"
+            pExitExes.Add "TransStickies", "TransStickies.exe"
 
         End If
 

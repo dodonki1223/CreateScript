@@ -310,6 +310,7 @@ Function AddRunFile(ByRef pRunFile,ByVal pRunDrive,ByRef pOrchisDirectory)
     pRunFile.Add "BijinTokeiGadget"   , pRunDrive & "\Tools\BijinTokeiGadget\BijinTokeiGadget.exe"
     pRunFile.Add "ä˜è„ó\ïÒ"           , pRunDrive & "\Tools\Weather\Weather64.exe"
     pRunFile.Add "SuperF4"            , pRunDrive & "\Tools\SuperF4\SuperF4.exe"
+    pRunFile.Add "TransStickies"      , pRunDrive & "\Tools\AutoHotKey\Tools\TransStickies\TransStickies.exe"
 
     Select Case runKbn
     
@@ -459,6 +460,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
 
     'ÅöOftenUseÅö
     pFileInfo.Add "Atom.lnk"                                  , pRunDrive & "\Tools\AtomPortable\AtomPortable.exe"                                    & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
+    pFileInfo.Add "BusyBox.lnk"                               , pRunDrive & "\Tools\BusyBox\RunBusyBox.bat"                                           & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
     pFileInfo.Add "EmEditorPortable.lnk"                      , pRunDrive & "\Tools\EmEditor\EmEditor.exe"                                            & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
     pFileInfo.Add "FolderFileList.lnk"                        , pRunDrive & "\Tools\FolderFileList\FolderFileList.exe"                                & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
     pFileInfo.Add "FolderFileListDebug.lnk"                   , pRunDrive & "\Tools\FolderFileList\FolderFileList_Debug.exe"                          & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
@@ -603,6 +605,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     pFileInfo.Add "FitWin.lnk"                                , pRunDrive & "\Tools\fitwin\fitwin.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
     pFileInfo.Add "IObitUnlocker.lnk"                         , pRunDrive & "\Tools\IObitUnlockerPortable\IObitUnlockerPortable.exe"                  & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
     pFileInfo.Add "TanZIP.lnk"                                , pRunDrive & "\Tools\TanZIP\TanZIP.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
+    pFileInfo.Add "TransStickies.lnk"                         , pRunDrive & "\Tools\AutoHotKey\Tools\TransStickies\TransStickies.exe"                 & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
     pFileInfo.Add "makeexe.lnk"                               , pRunDrive & "\Tools\makeexe\"                                                         & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
     pFileInfo.Add "Meiryo UIÇ‡ëÂåôÇ¢!!.lnk"                   , pRunDrive & "\Tools\noMeiryoUI\noMeiryoUI.exe"                                        & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
     pFileInfo.Add "pointClip.lnk"                             , pRunDrive & "\Tools\PointClip\pointClip.exe"                                          & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
