@@ -460,7 +460,6 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
 
     '★OftenUse★
     pFileInfo.Add "Atom.lnk"                                  , pRunDrive & "\Tools\AtomPortable\AtomPortable.exe"                                    & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
-    pFileInfo.Add "BusyBox.lnk"                               , pRunDrive & "\Tools\BusyBox\RunBusyBox.bat"                                           & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
     pFileInfo.Add "EmEditorPortable.lnk"                      , pRunDrive & "\Tools\EmEditor\EmEditor.exe"                                            & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
     pFileInfo.Add "FolderFileList.lnk"                        , pRunDrive & "\Tools\FolderFileList\FolderFileList.exe"                                & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
     pFileInfo.Add "FolderFileListDebug.lnk"                   , pRunDrive & "\Tools\FolderFileList\FolderFileList_Debug.exe"                          & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
@@ -565,7 +564,10 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
 
     '★Development★
     pFileInfo.Add "A5SQL Mk-2.lnk"                            , pRunDrive & "\Tools\A5SQLMk-2\A5M2.exe"                                               & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
+    pFileInfo.Add "BusyBox.lnk"                               , pRunDrive & "\Tools\BusyBox\RunBusyBox.bat"                                           & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
+    pFileInfo.Add "cmd.lnk"                                   , "%windir%\system32\cmd.exe"                                                           & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & ""                                         & "|" & "%windir%\system32\cmd.exe"                                       & "|" & "%windir%\system32"
     pFileInfo.Add "HeidiSQL.lnk"                              , pRunDrive & "\Tools\HeidiSQL\heidisql.exe"                                            & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
+    pFileInfo.Add "PowerShell.lnk"                            , "%windir%\System32\WindowsPowerShell\v1.0\powershell.exe"                             & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & ""                                         & "|" & "%windir%\System32\WindowsPowerShell\v1.0\powershell.exe"         & "|" & "%windir%\system32"
     pFileInfo.Add "RLogin.lnk"                                , pRunDrive & "\Tools\RLogin\RLogin.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
     pFileInfo.Add "WinMerge.lnk"                              , pRunDrive & "\Tools\WinMergePortable\WinMergePortable.exe"                            & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
     pFileInfo.Add "Zeal.lnk"                                  , pRunDrive & "\Tools\zeal-portable\zeal.exe"                                           & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
@@ -626,7 +628,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     pFileInfo.Add "00_FIFOモード切り替え.lnk"                 , pRunDrive & "\Tools\clibor\Clibor.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\ClipConversion\"             & "|" & "/ff"
     pFileInfo.Add "01_各行先頭に「 ＞ 」を挿入（引用文）.lnk" , pRunDrive & "\Tools\clibor\Clibor.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\ClipConversion\"             & "|" & "/sd 1"
     pFileInfo.Add "02_各行先頭に「 001： 」の連番を挿入.lnk"  , pRunDrive & "\Tools\clibor\Clibor.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\ClipConversion\"             & "|" & "/sd 2"
-    pFileInfo.Add "03_各行を「 ” 」で囲む.lnk"                , pRunDrive & "\Tools\clibor\Clibor.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\ClipConversion\"             & "|" & "/sd 3"
+    pFileInfo.Add "03_各行を「 ” 」で囲む.lnk"               , pRunDrive & "\Tools\clibor\Clibor.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\ClipConversion\"             & "|" & "/sd 3"
     pFileInfo.Add "04_各行を「 ' 」で囲む.lnk"                , pRunDrive & "\Tools\clibor\Clibor.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\ClipConversion\"             & "|" & "/sd 4"
     pFileInfo.Add "05_「大文字」に変換.lnk"                   , pRunDrive & "\Tools\clibor\Clibor.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\ClipConversion\"             & "|" & "/sd 5"
     pFileInfo.Add "06_「小文字」に変換.lnk"                   , pRunDrive & "\Tools\clibor\Clibor.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\ClipConversion\"             & "|" & "/sd 6"
@@ -645,7 +647,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
 
     '★Windows（アクセサリ）★
     pFileInfo.Add "Windows Media Player.lnk"                  , "%ProgramFiles(x86)%\Windows Media Player\wmplayer.exe"                               & "|" & pRunDrive & "\Tools\Shortcuts\Windows\アクセサリ\"
-    pFileInfo.Add "コマンドプロンプト.lnk"                    , "%windir%\system32\cmd.exe"                                                           & "|" & pRunDrive & "\Tools\Shortcuts\Windows\アクセサリ\"
+    pFileInfo.Add "コマンドプロンプト.lnk"                    , "%windir%\system32\cmd.exe"                                                           & "|" & pRunDrive & "\Tools\Shortcuts\Windows\アクセサリ\"         & "|" & ""                                         & "|" & "%windir%\system32\cmd.exe"                                       & "|" & "%windir%\system32"
     pFileInfo.Add "タスクマネージャー.lnk"                    , "%windir%\system32\taskmgr.exe"                                                       & "|" & pRunDrive & "\Tools\Shortcuts\Windows\アクセサリ\"
     pFileInfo.Add "ペイント.lnk"                              , "%windir%\system32\mspaint.exe"                                                       & "|" & pRunDrive & "\Tools\Shortcuts\Windows\アクセサリ\"
     pFileInfo.Add "メモ帳.lnk"                                , "%windir%\system32\notepad.exe"                                                       & "|" & pRunDrive & "\Tools\Shortcuts\Windows\アクセサリ\"
