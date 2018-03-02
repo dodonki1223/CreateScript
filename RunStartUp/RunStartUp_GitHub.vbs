@@ -459,7 +459,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     End Select
 
     'ÅöOftenUseÅö
-    pFileInfo.Add "Atom.lnk"                                  , pRunDrive & "\Tools\AtomPortable\AtomPortable.exe"                                    & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
+    pFileInfo.Add "Atom.lnk"                                  , pRunDrive & "\Tools\Atom\atom.exe"                                                    & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
     pFileInfo.Add "EmEditorPortable.lnk"                      , pRunDrive & "\Tools\EmEditor\EmEditor.exe"                                            & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
     pFileInfo.Add "FolderFileList.lnk"                        , pRunDrive & "\Tools\FolderFileList\FolderFileList.exe"                                & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
     pFileInfo.Add "FolderFileListDebug.lnk"                   , pRunDrive & "\Tools\FolderFileList\FolderFileList_Debug.exe"                          & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
