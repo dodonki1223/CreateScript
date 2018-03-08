@@ -485,6 +485,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
         Case "House", "GPDWIN"
 
             pFileInfo.Add "GoogleChrome.lnk"                          , "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"                            & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
+            pFileInfo.Add "LINE.lnk"                                  , "%UserProfile%\AppData\Local\LINE\bin\LineLauncher.exe"                               & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
             pFileInfo.Add "Thunderbird.lnk"                           , pRunDrive & "\Tools\ThunderbirdPortable\ThunderbirdPortable.exe"                      & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
 
         Case "USB"
@@ -605,6 +606,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     pFileInfo.Add "Filistry.lnk"                              , pRunDrive & "\Tools\Filistry136\Filistry.exe"                                         & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
     pFileInfo.Add "FireFileCopy.lnk"                          , pRunDrive & "\Tools\FireFileCopy\FFC.exe"                                             & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
     pFileInfo.Add "FitWin.lnk"                                , pRunDrive & "\Tools\fitwin\fitwin.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
+    pFileInfo.Add "Fスクリーンキーボード.lnk"                 , pRunDrive & "\Tools\fkey\fkey.exe"                                                    & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
     pFileInfo.Add "IObitUnlocker.lnk"                         , pRunDrive & "\Tools\IObitUnlockerPortable\IObitUnlockerPortable.exe"                  & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
     pFileInfo.Add "TanZIP.lnk"                                , pRunDrive & "\Tools\TanZIP\TanZIP.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
     pFileInfo.Add "TransStickies.lnk"                         , pRunDrive & "\Tools\AutoHotKey\Tools\TransStickies\TransStickies.exe"                 & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
@@ -615,6 +617,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     pFileInfo.Add "RunSpp.lnk"                                , pRunDrive & "\Tools\SPP\RunSpp.bat"                                                   & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
     pFileInfo.Add "StopWatchD.lnk"                            , pRunDrive & "\Tools\StopWatchD\StopWatchD.exe"                                        & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
     pFileInfo.Add "VeraCrypt.lnk"                             , pRunDrive & "\Tools\VeraCrypt\VeraCrypt.exe"                                          & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
+    pFileInfo.Add "XMind.lnk"                                 , pRunDrive & "\Tools\XMind\XMind.exe"                                                  & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
 
     Select Case runKbn
 
