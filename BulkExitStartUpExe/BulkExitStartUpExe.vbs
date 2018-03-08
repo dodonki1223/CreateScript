@@ -314,6 +314,19 @@ Function AddExitExe(ByVal pExitExes)
 
     End If
 
+    'WheelAcceleの終了可否
+    Dim mIsRunWheelAccele : mIsRunWheelAccele = IsRunProgram("WheelAccele.exe")
+    If mIsRunWheelAccele = True Then
+
+        Dim mWheelAcceleExitResult : mWheelAcceleExitResult  = GetSelectedUserResultForExitProgram("WheelAcceleを終了しますか？", "WheelAccele終了可否")
+        If mWheelAcceleExitResult  = vbYes Then
+
+            pExitExes.Add "WheelAccele" , "WheelAccele.exe"
+
+        End If
+
+    End If
+
     'X-Finderの終了可否
     Dim mIsRunXFinder : mIsRunXFinder = IsRunProgram("XF.exe")
     If mIsRunXFinder = True Then

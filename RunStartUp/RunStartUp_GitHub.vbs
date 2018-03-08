@@ -234,6 +234,7 @@ Function AddRunFile(ByRef pRunFile,ByVal pRunDrive,ByRef pOrchisDirectory)
     Dim msgMouseExistResult : msgMouseExistResult = MsgBox("お使いのパソコンにマウスはありますか？", vbYesNo, "マウス存在可否")
     If msgMouseExistResult = vbYes Then
 
+        pRunFile.Add "WheelAccele"        , pRunDrive & "\Tools\AutoHotKey\Tools\WheelAccele\WheelAccele.exe"
         pRunFile.Add "MouseGestureL"      , pRunDrive & "\Tools\MouseGestureL\MouseGestureL.exe"
 
     End If
@@ -405,6 +406,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
 
     '★StartUp★
     pFileInfo.Add "7+ Taskbar Tweaker.lnk"                    , """" & pRunDrive & "\Tools\7+ Taskbar Tweaker\7+ Taskbar Tweaker.exe"""               & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
+    pFileInfo.Add "AkabeiMonitor.lnk"                         , pRunDrive & "\Tools\AkabeiMonitor\akamoni.exe"                                        & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
     pFileInfo.Add "AutoHotKeyTool.lnk"                        , pRunDrive & "\Tools\AutoHotKey\AutoHotKeyTool.exe"                                    & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
     pFileInfo.Add "befoo.lnk"                                 , pRunDrive & "\Tools\befoo\befooPtan.exe"                                              & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
     pFileInfo.Add "BijinTokeiGadget.lnk"                      , pRunDrive & "\Tools\BijinTokeiGadget\BijinTokeiGadget.exe"                            & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
@@ -416,7 +418,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     pFileInfo.Add "RSS速報.lnk"                               , pRunDrive & "\Tools\RssNews\RssNews.exe"                                              & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
     pFileInfo.Add "Stickies.lnk"                              , pRunDrive & "\Tools\StickiesPortable\StickiesPortable.exe"                            & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
     pFileInfo.Add "SuperF4.lnk"                               , pRunDrive & "\Tools\SuperF4\SuperF4.exe"                                              & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
-    pFileInfo.Add "AkabeiMonitor.lnk"                         , pRunDrive & "\Tools\AkabeiMonitor\akamoni.exe"                                        & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
+    pFileInfo.Add "WheelAccele.lnk"                           , pRunDrive & "\Tools\AutoHotKey\Tools\WheelAccele\WheelAccele.exe"                     & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
     pFileInfo.Add "机上予報.lnk"                              , pRunDrive & "\Tools\Weather\Weather64.exe"                                            & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
 
     Select Case runKbn
@@ -577,7 +579,8 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
 
         Case "Company", "House", "GPDWIN"
 
-            pFileInfo.Add "GitBash.lnk"                               , """" & pRunDrive & "\Program Files\Git\git-bash.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & ""                                         & "|" & """" & pRunDrive & "\Program Files\Git\git-bash.exe"""            & "|" & "%UserProfile%\LaravelProjects\Homestead"
+            pFileInfo.Add "GitBash(Laravel).lnk"                      , """" & pRunDrive & "\Program Files\Git\git-bash.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & ""                                         & "|" & """" & pRunDrive & "\Program Files\Git\git-bash.exe"""            & "|" & "%UserProfile%\LaravelProjects\Homestead"
+            pFileInfo.Add "GitBash(Project).lnk"                      , """" & pRunDrive & "\Program Files\Git\git-bash.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & ""                                         & "|" & """" & pRunDrive & "\Program Files\Git\git-bash.exe"""            & "|" & "%SystemRoot%\..\Project"
             pFileInfo.Add "Oracle VM VirtualBox.lnk"                  , """" & pRunDrive & "\Program Files\Oracle\VirtualBox\VirtualBox.exe"""                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
             pFileInfo.Add "SourceTree.lnk"                            , "%UserProfile%\AppData\Local\SourceTree\SourceTree.exe"                               & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
             pFileInfo.Add "Visual Studio 2017.lnk"                    , "%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe"   & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
