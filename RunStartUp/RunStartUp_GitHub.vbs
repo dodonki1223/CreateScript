@@ -321,7 +321,7 @@ Function AddRunFile(ByRef pRunFile,ByVal pRunDrive,ByRef pOrchisDirectory)
             pRunFile.Add "RocketDock"         , pRunDrive & "\Tools\RocketDock\RocketDock.exe"
             pRunFile.Add "Chronus"            , pRunDrive & "\Tools\Chronus\"
             pRunFile.Add "Slack"              , """" & "%UserProfile%\AppData\Local\slack\slack.exe"""
-            pRunFile.Add "GoogleDrive"        , """" & pRunDrive & "\Program Files (x86)\Google\Drive\googledrivesync.exe"""
+            pRunFile.Add "GoogleDrive"        , """" & pRunDrive & "\Program Files\Google\Drive\googledrivesync.exe"""
 
         Case "House"
 
@@ -329,7 +329,7 @@ Function AddRunFile(ByRef pRunFile,ByVal pRunDrive,ByRef pOrchisDirectory)
             pRunFile.Add "RocketDock"         , pRunDrive & "\Tools\RocketDock\RocketDock.exe"
             pRunFile.Add "Chronus"            , pRunDrive & "\Tools\Chronus\"
             pRunFile.Add "Slack"              , """" & "%UserProfile%\AppData\Local\slack\slack.exe"""
-            pRunFile.Add "GoogleDrive"        , """" & pRunDrive & "\Program Files (x86)\Google\Drive\googledrivesync.exe"""
+            pRunFile.Add "GoogleDrive"        , """" & pRunDrive & "\Program Files\Google\Drive\googledrivesync.exe"""
             
         Case "GPDWIN"
         
@@ -428,7 +428,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
             pFileInfo.Add "BijinTokeiGadget_Shizuoka.lnk"             , pRunDrive & "\Tools\BijinTokeiGadget_Shizuoka\BijinTokeiGadget.exe"                   & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "BijinTokeiGadget_Other.lnk"                , pRunDrive & "\Tools\BijinTokeiGadget_Other\BijinTokeiGadget.exe"                      & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "Chronus.lnk"                               , pRunDrive & "\Tools\Chronus\"                                                         & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
-            pFileInfo.Add "GoogleDrive.lnk"                           , """" & pRunDrive & "\Program Files (x86)\Google\Drive\googledrivesync.exe"""          & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
+            pFileInfo.Add "GoogleDrive.lnk"                           , """" & pRunDrive & "\Program Files\Google\Drive\googledrivesync.exe"""                & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "RocketDock.lnk"                            , pRunDrive & "\Tools\RocketDock\RocketDock.exe"                                        & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "Slack.lnk"                                 , """" & "%UserProfile%\AppData\Local\slack\slack.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "TVClock.lnk"                               , pRunDrive & "\Tools\tvclock\TVClock.exe"                                              & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
@@ -438,7 +438,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
             pFileInfo.Add "BijinTokeiGadget_Shizuoka.lnk"             , pRunDrive & "\Tools\BijinTokeiGadget_Shizuoka\BijinTokeiGadget.exe"                   & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "BijinTokeiGadget_Other.lnk"                , pRunDrive & "\Tools\BijinTokeiGadget_Other\BijinTokeiGadget.exe"                      & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "Chronus.lnk"                               , pRunDrive & "\Tools\Chronus\"                                                         & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
-            pFileInfo.Add "GoogleDrive.lnk"                           , """" & pRunDrive & "\Program Files (x86)\Google\Drive\googledrivesync.exe"""          & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
+            pFileInfo.Add "GoogleDrive.lnk"                           , """" & pRunDrive & "\Program Files\Google\Drive\googledrivesync.exe"""                & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "RocketDock.lnk"                            , pRunDrive & "\Tools\RocketDock\RocketDock.exe"                                        & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "Slack.lnk"                                 , """" & "%UserProfile%\AppData\Local\slack\slack.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "TVClock.lnk"                               , pRunDrive & "\Tools\tvclock\TVClock.exe"                                              & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
@@ -448,7 +448,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
 
             pFileInfo.Add "BijinTokeiGadget_Shizuoka.lnk"             , pRunDrive & "\Tools\BijinTokeiGadget_Shizuoka\BijinTokeiGadget.exe"                   & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "Chronus.lnk"                               , pRunDrive & "\Tools\Chronus\"                                                         & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
-            pFileInfo.Add "GoogleDrive.lnk"                           , """" & pRunDrive & "\Program Files (x86)\Google\Drive\googledrivesync.exe"""          & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
+            pFileInfo.Add "GoogleDrive.lnk"                           , """" & pRunDrive & "\Program Files\Google\Drive\googledrivesync.exe"""                & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "RocketDock.lnk"                            , pRunDrive & "\Tools\RocketDock\RocketDock.exe"                                        & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "Slack.lnk"                                 , """" & "%UserProfile%\AppData\Local\slack\slack.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "TVClock.lnk"                               , pRunDrive & "\Tools\tvclock\TVClock.exe"                                              & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
@@ -482,7 +482,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
 
             pFileInfo.Add "GoogleChrome.lnk"                          , "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"                            & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
             pFileInfo.Add "Thunderbird.lnk"                           , "%ProgramFiles(x86)%\Mozilla Thunderbird\thunderbird.exe"                             & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
-            pFileInfo.Add "EmEditor.lnk"                              , "%UserProfile%\AppData\Local\Programs\EmEditor\EmEditor.exe"                           & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"                  & "|" & ""                                 & "|" & "%UserProfile%\AppData\Local\Programs\EmEditor\EmEditor.exe"
+            pFileInfo.Add "EmEditor.lnk"                              , "%UserProfile%\AppData\Local\Programs\EmEditor\EmEditor.exe"                          & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"                  & "|" & ""                                 & "|" & "%UserProfile%\AppData\Local\Programs\EmEditor\EmEditor.exe"
 
         Case "House", "GPDWIN"
 
@@ -634,7 +634,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     pFileInfo.Add "00_FIFOモード切り替え.lnk"                 , pRunDrive & "\Tools\clibor\Clibor.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\ClipConversion\"             & "|" & "/ff"
     pFileInfo.Add "01_各行先頭に「 ＞ 」を挿入（引用文）.lnk" , pRunDrive & "\Tools\clibor\Clibor.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\ClipConversion\"             & "|" & "/sd 1"
     pFileInfo.Add "02_各行先頭に「 001： 」の連番を挿入.lnk"  , pRunDrive & "\Tools\clibor\Clibor.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\ClipConversion\"             & "|" & "/sd 2"
-    pFileInfo.Add "03_各行を「 ” 」で囲む.lnk"               , pRunDrive & "\Tools\clibor\Clibor.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\ClipConversion\"             & "|" & "/sd 3"
+    pFileInfo.Add "03_各行を「 ” 」で囲む.lnk"                , pRunDrive & "\Tools\clibor\Clibor.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\ClipConversion\"             & "|" & "/sd 3"
     pFileInfo.Add "04_各行を「 ' 」で囲む.lnk"                , pRunDrive & "\Tools\clibor\Clibor.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\ClipConversion\"             & "|" & "/sd 4"
     pFileInfo.Add "05_「大文字」に変換.lnk"                   , pRunDrive & "\Tools\clibor\Clibor.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\ClipConversion\"             & "|" & "/sd 5"
     pFileInfo.Add "06_「小文字」に変換.lnk"                   , pRunDrive & "\Tools\clibor\Clibor.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\ClipConversion\"             & "|" & "/sd 6"
