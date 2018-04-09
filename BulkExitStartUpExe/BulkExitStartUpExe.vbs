@@ -128,6 +128,22 @@ Function AddExitExe(ByVal pExitExes)
 
     End If
 
+
+    'BijoLinuxGadgetの終了可否
+    Dim mIsRunBijoLinuxGadget : mIsRunBijoLinuxGadget = IsRunProgram("BijoLinuxGadget.exe")
+    If mIsRunBijoLinuxGadget = True Then
+
+        Dim mBijoLinuxGadgetExitResult : mBijoLinuxGadgetExitResult = GetSelectedUserResultForExitProgram("BijoLinuxGadgetを終了しますか？", "BijoLinuxGadget終了可否")
+        If mBijoLinuxGadgetExitResult = vbYes Then
+
+            pExitExes.Add "BijoLinuxGadget", "BijoLinuxGadget.exe"
+
+        End If
+
+    End If
+
+
+
     'Chronusの終了可否
     Dim mIsRunChronus : mIsRunChronus = IsRunProgram("Chronus.exe")
     If mIsRunChronus = True Then
@@ -283,19 +299,6 @@ Function AddExitExe(ByVal pExitExes)
         If mSuperF4ExitResult = vbYes Then
 
             pExitExes.Add "SuperF4", "SuperF4.exe"
-
-        End If
-
-    End If
-
-    'TransStickiesの終了可否
-    Dim mIsRunTransStickies : mIsRunTransStickies = IsRunProgram("TransStickies.exe")
-    If mIsRunTransStickies = True Then
-
-        Dim mTransStickiesExitResult : mTransStickiesExitResult = GetSelectedUserResultForExitProgram("TransStickiesを終了しますか？", "TransStickies終了可否")
-        If mTransStickiesExitResult = vbYes Then
-
-            pExitExes.Add "TransStickies", "TransStickies.exe"
 
         End If
 
