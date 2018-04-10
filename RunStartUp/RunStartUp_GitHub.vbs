@@ -282,22 +282,27 @@ Function AddRunFile(ByRef pRunFile,ByVal pRunDrive,ByRef pOrchisDirectory)
 
         End If
 
-        '棒読みちゃん起動可否 いいえが押された時は棒読みちゃんを起動しない(起動ファイル格納Dictionaryに追加しない)
         Select Case runKbn
 
             Case "House"
 
+                '棒読みちゃん起動可否 いいえが押された時は棒読みちゃんを起動しない(起動ファイル格納Dictionaryに追加しない)
                 Dim msgRunBouyoumiChanResult : msgRunBouyoumiChanResult = MsgBox("棒読みちゃんを起動しますか？", vbYesNo, "棒読みちゃん起動可否")
                 If msgRunBouyoumiChanResult = vbYes Then
 
                       pRunFile.Add "BouyomiChan"       , pRunDrive & "\Tools\BouyomiChan\BouyomiChan.exe"
 
                 End If
+                
+                pRunFile.Add "befoo"              , pRunDrive & "\Tools\befoo\befooPtan.exe"
+                pRunFile.Add "RssNews"            , pRunDrive & "\Tools\RssNews\RssNews.exe"
+                
+            Case "Company"
+
+                pRunFile.Add "befoo"              , pRunDrive & "\Tools\befoo\befooPtan.exe"
+                pRunFile.Add "RssNews"            , pRunDrive & "\Tools\RssNews\RssNews.exe"
 
         End Select
-
-        pRunFile.Add "befoo"              , pRunDrive & "\Tools\befoo\befooPtan.exe"
-        pRunFile.Add "RssNews"            , pRunDrive & "\Tools\RssNews\RssNews.exe"
 
     End If
 
