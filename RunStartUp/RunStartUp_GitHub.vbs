@@ -527,6 +527,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     End Select
 
     'ÅöPlayer•ViewerÅö
+    pFileInfo.Add "Calibre.lnk"                               , pRunDrive & "\Tools\CalibrePortable\calibre-portable.exe"                             & "|" & pRunDrive & "\Tools\Shortcuts\Player•Viewer\"              & "|" & ""                                         & "|" & pRunDrive & "\Tools\CalibrePortable\calibre-portable.exe"         & "|" & pRunDrive & "\Tools\CalibrePortable"
     pFileInfo.Add "FoxitReader.lnk"                           , pRunDrive & "\Tools\FoxitReaderPortable\FoxitReaderPortable.exe"                      & "|" & pRunDrive & "\Tools\Shortcuts\Player•Viewer\"
     pFileInfo.Add "PDF-XChangeViewer.lnk"                     , pRunDrive & "\Tools\PDF-XChangeViewerPortable\PDF-XChangeViewerPortable.exe"          & "|" & pRunDrive & "\Tools\Shortcuts\Player•Viewer\"
     pFileInfo.Add "XnView.lnk"                                , pRunDrive & "\Tools\XnViewPortable\XnViewPortable.exe"                                & "|" & pRunDrive & "\Tools\Shortcuts\Player•Viewer\"
