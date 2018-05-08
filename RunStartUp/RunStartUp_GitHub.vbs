@@ -326,7 +326,6 @@ Function AddRunFile(ByRef pRunFile,ByVal pRunDrive,ByRef pOrchisDirectory)
             pRunFile.Add "Slack"              , """" & "%UserProfile%\AppData\Local\slack\slack.exe"""
             pRunFile.Add "SuperF4"            , pRunDrive & "\Tools\SuperF4\SuperF4.exe"
             pRunFile.Add "GoogleDrive"        , """" & pRunDrive & "\Program Files\Google\Drive\googledrivesync.exe"""
-            
             pRunFile.Add "ä˜è„ó\ïÒ"           , pRunDrive & "\Tools\Weather\Weather64.exe"
 
         Case "House"
@@ -491,7 +490,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
 
             pFileInfo.Add "GoogleChrome.lnk"                          , "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"                            & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
             pFileInfo.Add "Thunderbird.lnk"                           , "%ProgramFiles(x86)%\Mozilla Thunderbird\thunderbird.exe"                             & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
-            pFileInfo.Add "EmEditor.lnk"                              , "%UserProfile%\AppData\Local\Programs\EmEditor\EmEditor.exe"                           & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"                  & "|" & ""                                 & "|" & "%UserProfile%\AppData\Local\Programs\EmEditor\EmEditor.exe"
+            pFileInfo.Add "EmEditor.lnk"                              , """" & pRunDrive & "\Program Files\EmEditor\EmEditor.exe"""                           & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"                   & "|" & ""                                 & "|" & """" & pRunDrive & "\Program Files\EmEditor\EmEditor.exe"""
 
         Case "House", "NotePC"
 
@@ -593,7 +592,9 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
             pFileInfo.Add "GitBash(Project).lnk"                      , """" & pRunDrive & "\Program Files\Git\git-bash.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & ""                                         & "|" & """" & pRunDrive & "\Program Files\Git\git-bash.exe"""            & "|" & "%SystemRoot%\..\Project"
             pFileInfo.Add "Oracle VM VirtualBox.lnk"                  , """" & pRunDrive & "\Program Files\Oracle\VirtualBox\VirtualBox.exe"""                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
             pFileInfo.Add "SourceTree.lnk"                            , "%UserProfile%\AppData\Local\SourceTree\SourceTree.exe"                               & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
+            pFileInfo.Add "TeraTerm.lnk"                              , "%ProgramFiles(x86)%\teraterm\ttermpro.exe"                                           & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
             pFileInfo.Add "Visual Studio 2017.lnk"                    , "%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe"   & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
+            pFileInfo.Add "WinsSCP.lnk"                               , "%ProgramFiles(x86)%\WinSCP\WinSCP.exe"                                               & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
 
     End Select
 
