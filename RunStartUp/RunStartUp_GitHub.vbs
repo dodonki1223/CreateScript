@@ -594,7 +594,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
 
     Select Case runKbn
 
-        Case "Company", "House", "NotePC"
+        Case "Company"
 
             pFileInfo.Add "Docker For Windows.lnk"                    , """" & pRunDrive & "\Program Files\Docker\Docker\Docker for Windows.exe"""            & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
             pFileInfo.Add "GitBash(Laravel).lnk"                      , """" & pRunDrive & "\Program Files\Git\git-bash.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & ""                                         & "|" & """" & pRunDrive & "\Program Files\Git\git-bash.exe"""            & "|" & "%UserProfile%\LaravelProjects\Homestead"
@@ -605,6 +605,18 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
             pFileInfo.Add "TeraTerm.lnk"                              , "%ProgramFiles(x86)%\teraterm\ttermpro.exe"                                           & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
             pFileInfo.Add "Visual Studio 2017.lnk"                    , "%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe"   & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
             pFileInfo.Add "WinsSCP.lnk"                               , "%ProgramFiles(x86)%\WinSCP\WinSCP.exe"                                               & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
+
+        Case "House", "NotePC"
+
+            pFileInfo.Add "Docker For Windows.lnk"                    , """" & pRunDrive & "\Program Files\Docker\Docker\Docker for Windows.exe"""            & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
+            pFileInfo.Add "GitBash(Laravel).lnk"                      , """" & pRunDrive & "\Program Files\Git\git-bash.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & ""                                         & "|" & """" & pRunDrive & "\Program Files\Git\git-bash.exe"""            & "|" & "%UserProfile%\LaravelProjects\Homestead"
+            pFileInfo.Add "GitBash(Project).lnk"                      , """" & pRunDrive & "\Program Files\Git\git-bash.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & ""                                         & "|" & """" & pRunDrive & "\Program Files\Git\git-bash.exe"""            & "|" & "%SystemRoot%\..\Project"
+            pFileInfo.Add "GitBash(UserFolder).lnk"                   , """" & pRunDrive & "\Program Files\Git\git-bash.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & ""                                         & "|" & """" & pRunDrive & "\Program Files\Git\git-bash.exe"""            & "|" & "%UserProfile%"
+            pFileInfo.Add "Oracle VM VirtualBox.lnk"                  , """" & pRunDrive & "\Program Files\Oracle\VirtualBox\VirtualBox.exe"""                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
+            pFileInfo.Add "SourceTree.lnk"                            , "%UserProfile%\AppData\Local\SourceTree\SourceTree.exe"                               & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
+            pFileInfo.Add "TeraTerm.lnk"                              , pRunDrive & "\Tools\TeraTerm\ttermpro.exe"                                            & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
+            pFileInfo.Add "Visual Studio 2017.lnk"                    , "%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe"   & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
+            pFileInfo.Add "WinsSCP.lnk"                               , pRunDrive & "\Tools\WinSCP\WinSCP.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
 
     End Select
 
