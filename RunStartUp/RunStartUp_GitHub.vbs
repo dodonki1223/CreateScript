@@ -528,18 +528,12 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     'ÅöPlayer•ViewerÅö
     pFileInfo.Add "Calibre.lnk"                               , pRunDrive & "\Tools\CalibrePortable\calibre-portable.exe"                             & "|" & pRunDrive & "\Tools\Shortcuts\Player•Viewer\"              & "|" & ""                                         & "|" & pRunDrive & "\Tools\CalibrePortable\calibre-portable.exe"         & "|" & pRunDrive & "\Tools\CalibrePortable"
     pFileInfo.Add "FoxitReader.lnk"                           , pRunDrive & "\Tools\FoxitReaderPortable\FoxitReaderPortable.exe"                      & "|" & pRunDrive & "\Tools\Shortcuts\Player•Viewer\"
+    pFileInfo.Add "Kindle.lnk"                                , "%UserProfile%\AppData\Local\Amazon\Kindle\application\Kindle.exe"                    & "|" & pRunDrive & "\Tools\Shortcuts\Player•Viewer\"
     pFileInfo.Add "PDF-XChangeViewer.lnk"                     , pRunDrive & "\Tools\PDF-XChangeViewerPortable\PDF-XChangeViewerPortable.exe"          & "|" & pRunDrive & "\Tools\Shortcuts\Player•Viewer\"
     pFileInfo.Add "XnView.lnk"                                , pRunDrive & "\Tools\XnViewPortable\XnViewPortable.exe"                                & "|" & pRunDrive & "\Tools\Shortcuts\Player•Viewer\"
 
 
     Select Case runKbn
-
-        Case "House"
-
-            pFileInfo.Add "Kindle.lnk"                                , "%UserProfile%\AppData\Local\Amazon\Kindle\application\Kindle.exe"                    & "|" & pRunDrive & "\Tools\Shortcuts\Player•Viewer\"
-            pFileInfo.Add "foobar2000.lnk"                            , pRunDrive & "\Tools\foobar2000\foobar2000.exe"                                        & "|" & pRunDrive & "\Tools\Shortcuts\Player•Viewer\"
-            pFileInfo.Add "MangaMeeya.lnk"                            , pRunDrive & "\Tools\MangaMeeya_73\MangaMeeya.exe"                                     & "|" & pRunDrive & "\Tools\Shortcuts\Player•Viewer\"
-            pFileInfo.Add "VLC Media Player.lnk"                      , pRunDrive & "\Tools\VLCPortable\VLCPortable.exe"                                      & "|" & pRunDrive & "\Tools\Shortcuts\Player•Viewer\"
 
         Case "House", "USB", "NotePC"
 
