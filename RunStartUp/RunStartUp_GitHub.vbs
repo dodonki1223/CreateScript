@@ -18,7 +18,7 @@
 '--------------------------------------
 ' 設定
 '--------------------------------------
-'※実行区分「Company：会社、House：家、USB：USB、NotePC：ノートパソコン」
+'※実行区分「Company：会社、House：家、ZenBook：ZenBook3、USB：USB、NotePC：ノートパソコン」
 '  デフォルトはUSBです
 Dim runKbn : runKbn = "USB"
 
@@ -252,7 +252,7 @@ Function AddRunFile(ByRef pRunFile,ByVal pRunDrive,ByRef pOrchisDirectory)
 
             Select Case runKbn
 
-                Case "Company", "House", "NotePC"
+                Case "Company", "House", "ZenBook","NotePC"
 
                     pRunFile.Add "GoogleChrome"       , """" & pRunDrive & "\Program Files (x86)\Google\Chrome\Application\chrome.exe"""
 
@@ -274,7 +274,7 @@ Function AddRunFile(ByRef pRunFile,ByVal pRunDrive,ByRef pOrchisDirectory)
 
                     pRunFile.Add "ThunderBird"        , """" & pRunDrive & "\Program Files (x86)\Mozilla Thunderbird\thunderbird.exe"""
 
-                Case "House", "USB", "NotePC"
+                Case "House", "ZenBook", "USB", "NotePC"
 
                     pRunFile.Add "ThunderBird"        , pRunDrive & "\Tools\ThunderbirdPortable\ThunderbirdPortable.exe"
 
@@ -284,7 +284,7 @@ Function AddRunFile(ByRef pRunFile,ByVal pRunDrive,ByRef pOrchisDirectory)
 
         Select Case runKbn
 
-            Case "House"
+            Case "House", "ZenBook"
 
                 '棒読みちゃん起動可否 いいえが押された時は棒読みちゃんを起動しない(起動ファイル格納Dictionaryに追加しない)
                 Dim msgRunBouyoumiChanResult : msgRunBouyoumiChanResult = MsgBox("棒読みちゃんを起動しますか？", vbYesNo, "棒読みちゃん起動可否")
@@ -328,7 +328,7 @@ Function AddRunFile(ByRef pRunFile,ByVal pRunDrive,ByRef pOrchisDirectory)
             pRunFile.Add "GoogleDrive"        , """" & pRunDrive & "\Program Files\Google\Drive\googledrivesync.exe"""
             pRunFile.Add "机上予報"           , pRunDrive & "\Tools\Weather\Weather64.exe"
 
-        Case "House"
+        Case "House", "ZenBook"
 
             pRunFile.Add "BijinTokeiGadget"   , pRunDrive & "\Tools\BijinTokeiGadget\BijinTokeiGadget.exe"
             pRunFile.Add "BijoLinuxGadget"    , pRunDrive & "\Tools\BijoLinuxGadget\BijoLinuxGadget.exe"
@@ -359,7 +359,7 @@ Function AddRunFile(ByRef pRunFile,ByVal pRunDrive,ByRef pOrchisDirectory)
 
             Select Case runKbn
 
-                Case "Company", "House", "NotePC"
+                Case "Company", "House", "ZenBook", "NotePC"
 
                     pOrchisDirectory = """" & pRunDrive & "\Program Files\Orchis\orchis.exe""" 'インストール版
 
@@ -443,7 +443,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
             pFileInfo.Add "Slack.lnk"                                 , """" & "%UserProfile%\AppData\Local\slack\slack.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "TVClock.lnk"                               , pRunDrive & "\Tools\tvclock\TVClock.exe"                                              & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
 
-        Case "House"
+        Case "House", "ZenBook"
 
             pFileInfo.Add "BijinTokeiGadget_Other.lnk"                , pRunDrive & "\Tools\BijinTokeiGadget_Other\BijinTokeiGadget.exe"                      & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "Chronus.lnk"                               , pRunDrive & "\Tools\Chronus\"                                                         & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
@@ -492,7 +492,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
             pFileInfo.Add "Thunderbird.lnk"                           , "%ProgramFiles(x86)%\Mozilla Thunderbird\thunderbird.exe"                             & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
             pFileInfo.Add "EmEditor.lnk"                              , """" & pRunDrive & "\Program Files\EmEditor\EmEditor.exe"""                           & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"                   & "|" & ""                                 & "|" & """" & pRunDrive & "\Program Files\EmEditor\EmEditor.exe"""
 
-        Case "House", "NotePC"
+        Case "House", "ZenBook", "NotePC"
 
             pFileInfo.Add "GoogleChrome.lnk"                          , "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"                            & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
             pFileInfo.Add "LINE.lnk"                                  , "%UserProfile%\AppData\Local\LINE\bin\LineLauncher.exe"                               & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
@@ -517,7 +517,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
 
     Select Case runKbn
 
-        Case "House", "USB", "NotePC"
+        Case "House", "ZenBook", "USB", "NotePC"
 
             pFileInfo.Add "CDEx.lnk"                                  , pRunDrive & "\Tools\CDExPortable\CDExPortable.exe"                                    & "|" & pRunDrive & "\Tools\Shortcuts\FileEdit\"
             pFileInfo.Add "Mp3tag.lnk"                                , pRunDrive & "\Tools\mp3tag\Mp3tag.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\FileEdit\"
@@ -535,7 +535,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
 
     Select Case runKbn
 
-        Case "House", "USB", "NotePC"
+        Case "House", "ZenBook", "USB", "NotePC"
 
             pFileInfo.Add "foobar2000.lnk"                            , pRunDrive & "\Tools\foobar2000\foobar2000.exe"                                        & "|" & pRunDrive & "\Tools\Shortcuts\Player･Viewer\"
             pFileInfo.Add "MangaMeeya.lnk"                            , pRunDrive & "\Tools\MangaMeeya_73\MangaMeeya.exe"                                     & "|" & pRunDrive & "\Tools\Shortcuts\Player･Viewer\"
@@ -600,7 +600,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
             pFileInfo.Add "Visual Studio 2017.lnk"                    , "%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe"   & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
             pFileInfo.Add "WinsSCP.lnk"                               , "%ProgramFiles(x86)%\WinSCP\WinSCP.exe"                                               & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
 
-        Case "House", "NotePC"
+        Case "House", "ZenBook", "NotePC"
 
             pFileInfo.Add "Docker For Windows.lnk"                    , """" & pRunDrive & "\Program Files\Docker\Docker\Docker for Windows.exe"""            & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
             pFileInfo.Add "GitBash(Laravel).lnk"                      , """" & pRunDrive & "\Program Files\Git\git-bash.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & ""                                         & "|" & """" & pRunDrive & "\Program Files\Git\git-bash.exe"""            & "|" & "%UserProfile%\LaravelProjects\Homestead"
@@ -620,7 +620,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     '★Emulator★
     Select Case runKbn
 
-        Case "House", "NotePC"
+        Case "House", "ZenBook", "NotePC"
 
             pFileInfo.Add "NoxAppPlayer.lnk"                          , "%ProgramFiles(x86)%\Nox\bin\Nox.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\Emulator\"
             pFileInfo.Add "NoxAppPlayerMulti-Drive.lnk"               , "%ProgramFiles(x86)%\Nox\bin\MultiPlayerManager.exe"                                 & "|" & pRunDrive & "\Tools\Shortcuts\Emulator\"
@@ -648,14 +648,6 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     pFileInfo.Add "StopWatchD.lnk"                            , pRunDrive & "\Tools\StopWatchD\StopWatchD.exe"                                        & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
     pFileInfo.Add "VeraCrypt.lnk"                             , pRunDrive & "\Tools\VeraCrypt\VeraCrypt.exe"                                          & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
     pFileInfo.Add "XMind.lnk"                                 , pRunDrive & "\Tools\XMind\XMind.exe"                                                  & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
-
-    Select Case runKbn
-
-        Case "House", "USB" ,"NotePC"
-
-            pFileInfo.Add "JoyToKey.lnk"                              , pRunDrive & "\Tools\JoyToKey\JoyToKey.exe"                                            & "|" & pRunDrive & "\Tools\Shortcuts\Other\"
-
-    End Select
 
     '★クリップボード整形のリンクを作成★
     pFileInfo.Add "00_FIFOモード切り替え.lnk"                 , pRunDrive & "\Tools\clibor\Clibor.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\ClipConversion\"             & "|" & "/ff"
