@@ -320,7 +320,7 @@ Function AddRunFile(ByRef pRunFile,ByVal pRunDrive,ByRef pOrchisDirectory)
             pRunFile.Add "BijoLinuxGadget"    , pRunDrive & "\Tools\BijoLinuxGadget\BijoLinuxGadget.exe"
             pRunFile.Add "Evernote"           , pRunDrive & "\Tools\EvernotePortable\EvernotePortable.exe"
             pRunFile.Add "Stickies"           , pRunDrive & "\Tools\StickiesPortable\StickiesPortable.exe"
-            pRunFile.Add "TVClock"            , pRunDrive & "\Tools\tvclock\TVClock.exe"
+            pRunFile.Add "T-Clock"            , pRunDrive & "\Tools\T-Clock\Clock64.exe"
             pRunFile.Add "RocketDock"         , pRunDrive & "\Tools\RocketDock\RocketDock.exe"
             pRunFile.Add "Chronus"            , pRunDrive & "\Tools\Chronus\"
             pRunFile.Add "Slack"              , """" & "%UserProfile%\AppData\Local\slack\slack.exe"""
@@ -334,7 +334,7 @@ Function AddRunFile(ByRef pRunFile,ByVal pRunDrive,ByRef pOrchisDirectory)
             pRunFile.Add "BijoLinuxGadget"    , pRunDrive & "\Tools\BijoLinuxGadget\BijoLinuxGadget.exe"
             pRunFile.Add "Evernote"           , pRunDrive & "\Tools\EvernotePortable\EvernotePortable.exe"
             pRunFile.Add "Stickies"           , pRunDrive & "\Tools\StickiesPortable\StickiesPortable.exe"
-            pRunFile.Add "TVClock"            , pRunDrive & "\Tools\tvclock\TVClock.exe"
+            pRunFile.Add "T-Clock"            , pRunDrive & "\Tools\T-Clock\Clock64.exe"
             pRunFile.Add "RocketDock"         , pRunDrive & "\Tools\RocketDock\RocketDock.exe"
             pRunFile.Add "Chronus"            , pRunDrive & "\Tools\Chronus\"
             pRunFile.Add "Slack"              , """" & "%UserProfile%\AppData\Local\slack\slack.exe"""
@@ -345,7 +345,7 @@ Function AddRunFile(ByRef pRunFile,ByVal pRunDrive,ByRef pOrchisDirectory)
             
         Case "NotePC"
 
-            pRunFile.Add "TVClock"            , pRunDrive & "\Tools\tvclock\TVClock.exe"
+            pRunFile.Add "T-Clock"            , pRunDrive & "\Tools\T-Clock\Clock64.exe"
 
     End Select
 
@@ -441,7 +441,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
             pFileInfo.Add "GoogleDrive.lnk"                           , """" & pRunDrive & "\Program Files\Google\Drive\googledrivesync.exe"""                & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "RocketDock.lnk"                            , pRunDrive & "\Tools\RocketDock\RocketDock.exe"                                        & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "Slack.lnk"                                 , """" & "%UserProfile%\AppData\Local\slack\slack.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
-            pFileInfo.Add "TVClock.lnk"                               , pRunDrive & "\Tools\tvclock\TVClock.exe"                                              & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
+            pFileInfo.Add "T-Clock.lnk"                               , pRunDrive & "\Tools\T-Clock\Clock64.exe"                                              & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
 
         Case "House", "ZenBook"
 
@@ -450,7 +450,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
             pFileInfo.Add "GoogleDrive.lnk"                           , """" & pRunDrive & "\Program Files\Google\Drive\googledrivesync.exe"""                & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "RocketDock.lnk"                            , pRunDrive & "\Tools\RocketDock\RocketDock.exe"                                        & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "Slack.lnk"                                 , """" & "%UserProfile%\AppData\Local\slack\slack.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
-            pFileInfo.Add "TVClock.lnk"                               , pRunDrive & "\Tools\tvclock\TVClock.exe"                                              & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
+            pFileInfo.Add "T-Clock.lnk"                               , pRunDrive & "\Tools\T-Clock\Clock64.exe"                                              & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "–_“Ç‚Ý‚¿‚á‚ñ.lnk"                          , pRunDrive & "\Tools\BouyomiChan\BouyomiChan.exe"                                      & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
 
         Case "NotePC"
@@ -459,7 +459,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
             pFileInfo.Add "GoogleDrive.lnk"                           , """" & pRunDrive & "\Program Files\Google\Drive\googledrivesync.exe"""                & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "RocketDock.lnk"                            , pRunDrive & "\Tools\RocketDock\RocketDock.exe"                                        & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "Slack.lnk"                                 , """" & "%UserProfile%\AppData\Local\slack\slack.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
-            pFileInfo.Add "TVClock.lnk"                               , pRunDrive & "\Tools\tvclock\TVClock.exe"                                              & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
+            pFileInfo.Add "T-Clock.lnk"                               , pRunDrive & "\Tools\T-Clock\Clock64.exe"                                              & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "–_“Ç‚Ý‚¿‚á‚ñ.lnk"                          , pRunDrive & "\Tools\BouyomiChan\BouyomiChan.exe"                                      & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
 
         Case "USB"

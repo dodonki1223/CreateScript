@@ -3,9 +3,10 @@
 '* 処理概要     ： スタートアップで起動しうるプログラムを１つずつ終了するかどうかユー *
 '*                 ザーに対話で確認（メッセージボックスのはい、いいえ）。「はい」を   *
 '*                 選択されたプログラムをすべて終了します。                           *
-'*                 ※起動されていないプログラムを「はい」と選択しても何も起きません   *
-'*                   Cliborはクリップボードの履歴が保存されないので注意！！           *
-'* メモ         ：                                                                    *
+'*                 ※Cliborはクリップボードの履歴が保存されないので注意！！           *
+'*                   T-Clockに関しては通常のやり方ではうまく終了できなかったので個別  *
+'*                   で終了処理を記述する                                             *
+'* メモ         ： Stickiesがうまく終了できずに落ちる事があるので修正する必要あり     *
 '* 設定         ：                                                                    *
 '**************************************************************************************
 
@@ -37,6 +38,15 @@ Sub Main()
     '終了するプログラムの追加処理
     Set mExitExes = AddExitExe(mExitExes)
 
+    'T-Clockの終了可否 ※通常のやり方ではプロセスを終了できないのでTClockについては個別で対応する
+    Dim mTClockExitResult
+    Dim mIsRunTClock : mIsRunTClock = IsRunProgram("Clock64.exe")
+    If mIsRunTClock = True Then
+
+        mTClockExitResult  = GetSelectedUserResultForExitProgram("T-Clockを終了しますか？", "T-Clock終了可否")
+
+    End If
+
     '*****************************************
     '* プログラムの一括終了処理              *
     '*****************************************
@@ -51,6 +61,24 @@ Sub Main()
         Next
 
     Next
+
+    '*****************************************
+    '* T-Clockの終了処理（※個別で対応する） *
+    '*****************************************
+    If mTClockExitResult = vbYes Then
+
+        '実行ドライブを取得する
+        Dim mObjFso : set mObjFso = WScript.CreateObject("Scripting.FileSystemObject") 'FileSystemObject
+        Dim mRunDrive : mRunDrive = mObjFso.GetDriveName(WScript.ScriptFullName)
+
+        'T-Clockのフルパスを取得（終了のコマンドライン引数も含めて）
+        Dim mTClockPath : mTClockPath = mRunDrive & "\Tools\T-Clock\Clock64.exe /exit"
+
+        'T-Clockの終了を実行
+        Dim mObjShell : Set mObjShell = WScript.CreateObject("WScript.Shell")
+        mObjShell.Run mTClockPath
+
+    End If
 
 End Sub
 
@@ -299,19 +327,6 @@ Function AddExitExe(ByVal pExitExes)
         If mSuperF4ExitResult = vbYes Then
 
             pExitExes.Add "SuperF4", "SuperF4.exe"
-
-        End If
-
-    End If
-
-    'TVClockの終了可否
-    Dim mIsRunTVClock : mIsRunTVClock = IsRunProgram("TVClock.exe")
-    If mIsRunTVClock = True Then
-
-        Dim mTVClockExitResult : mTVClockExitResult  = GetSelectedUserResultForExitProgram("TVClockを終了しますか？", "TVClock終了可否")
-        If mTVClockExitResult = vbYes Then
-
-            pExitExes.Add "TVClock", "TVClock.exe"
 
         End If
 
