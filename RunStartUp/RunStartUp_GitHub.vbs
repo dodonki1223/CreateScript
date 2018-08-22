@@ -318,7 +318,7 @@ Function AddRunFile(ByRef pRunFile,ByVal pRunDrive,ByRef pOrchisDirectory)
 
             pRunFile.Add "BijinTokeiGadget"   , pRunDrive & "\Tools\BijinTokeiGadget\BijinTokeiGadget.exe"
             pRunFile.Add "BijoLinuxGadget"    , pRunDrive & "\Tools\BijoLinuxGadget\BijoLinuxGadget.exe"
-            pRunFile.Add "Evernote"           , pRunDrive & "\Tools\EvernotePortable\EvernotePortable.exe"
+            pRunFile.Add "Evernote"           , """" & "%ProgramFiles(x86)%\Evernote\Evernote\Evernote.exe"""
             pRunFile.Add "Stickies"           , pRunDrive & "\Tools\StickiesPortable\StickiesPortable.exe"
             pRunFile.Add "T-Clock"            , pRunDrive & "\Tools\T-Clock\Clock64.exe"
             pRunFile.Add "RocketDock"         , pRunDrive & "\Tools\RocketDock\RocketDock.exe"
@@ -332,7 +332,7 @@ Function AddRunFile(ByRef pRunFile,ByVal pRunDrive,ByRef pOrchisDirectory)
 
             pRunFile.Add "BijinTokeiGadget"   , pRunDrive & "\Tools\BijinTokeiGadget\BijinTokeiGadget.exe"
             pRunFile.Add "BijoLinuxGadget"    , pRunDrive & "\Tools\BijoLinuxGadget\BijoLinuxGadget.exe"
-            pRunFile.Add "Evernote"           , pRunDrive & "\Tools\EvernotePortable\EvernotePortable.exe"
+            pRunFile.Add "Evernote"           , """" & "%ProgramFiles(x86)%\Evernote\Evernote\Evernote.exe"""
             pRunFile.Add "Stickies"           , pRunDrive & "\Tools\StickiesPortable\StickiesPortable.exe"
             pRunFile.Add "T-Clock"            , pRunDrive & "\Tools\T-Clock\Clock64.exe"
             pRunFile.Add "RocketDock"         , pRunDrive & "\Tools\RocketDock\RocketDock.exe"
@@ -422,7 +422,6 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     pFileInfo.Add "BijinTokeiGadget.lnk"                      , pRunDrive & "\Tools\BijinTokeiGadget\BijinTokeiGadget.exe"                            & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
     pFileInfo.Add "BijoLinuxGadget.lnk"                       , pRunDrive & "\Tools\BijoLinuxGadget\BijoLinuxGadget.exe"                              & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
     pFileInfo.Add "Clibor.lnk"                                , pRunDrive & "\Tools\clibor\Clibor.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
-    pFileInfo.Add "Evernote.lnk"                              , pRunDrive & "\Tools\EvernotePortable\EvernotePortable.exe"                            & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
     pFileInfo.Add "Freeraser.lnk"                             , pRunDrive & "\Tools\Freeraser\Freeraser.exe"                                          & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
     pFileInfo.Add "MouseGestureL.lnk"                         , pRunDrive & "\Tools\MouseGestureL\MouseGestureL.exe"                                  & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
     pFileInfo.Add "Orchis.lnk"                                , pOrchisDirectory                                                                      & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"                            & "|" & ""                                 & "|" & pRunDrive & "\Program Files\Orchis\orchis.exe"
@@ -438,6 +437,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
 
             pFileInfo.Add "BijinTokeiGadget_Other.lnk"                , pRunDrive & "\Tools\BijinTokeiGadget_Other\BijinTokeiGadget.exe"                      & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "Chronus.lnk"                               , pRunDrive & "\Tools\Chronus\"                                                         & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
+            pFileInfo.Add "Evernote.lnk"                              , """" & "%ProgramFiles(x86)%\Evernote\Evernote\Evernote.exe"""                         & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "GoogleDrive.lnk"                           , """" & pRunDrive & "\Program Files\Google\Drive\googledrivesync.exe"""                & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "RocketDock.lnk"                            , pRunDrive & "\Tools\RocketDock\RocketDock.exe"                                        & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "Slack.lnk"                                 , """" & "%UserProfile%\AppData\Local\slack\slack.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
@@ -447,6 +447,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
 
             pFileInfo.Add "BijinTokeiGadget_Other.lnk"                , pRunDrive & "\Tools\BijinTokeiGadget_Other\BijinTokeiGadget.exe"                      & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "Chronus.lnk"                               , pRunDrive & "\Tools\Chronus\"                                                         & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
+            pFileInfo.Add "Evernote.lnk"                              , """" & "%ProgramFiles(x86)%\Evernote\Evernote\Evernote.exe"""                         & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "GoogleDrive.lnk"                           , """" & pRunDrive & "\Program Files\Google\Drive\googledrivesync.exe"""                & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "RocketDock.lnk"                            , pRunDrive & "\Tools\RocketDock\RocketDock.exe"                                        & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "Slack.lnk"                                 , """" & "%UserProfile%\AppData\Local\slack\slack.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
@@ -456,6 +457,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
         Case "NotePC"
 
             pFileInfo.Add "Chronus.lnk"                               , pRunDrive & "\Tools\Chronus\"                                                         & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
+            pFileInfo.Add "Evernote.lnk"                              , """" & "%ProgramFiles(x86)%\Evernote\Evernote\Evernote.exe"""                         & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "GoogleDrive.lnk"                           , """" & pRunDrive & "\Program Files\Google\Drive\googledrivesync.exe"""                & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "RocketDock.lnk"                            , pRunDrive & "\Tools\RocketDock\RocketDock.exe"                                        & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
             pFileInfo.Add "Slack.lnk"                                 , """" & "%UserProfile%\AppData\Local\slack\slack.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
@@ -531,7 +533,6 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     pFileInfo.Add "Kindle.lnk"                                , "%UserProfile%\AppData\Local\Amazon\Kindle\application\Kindle.exe"                    & "|" & pRunDrive & "\Tools\Shortcuts\Player¥Viewer\"
     pFileInfo.Add "PDF-XChangeViewer.lnk"                     , pRunDrive & "\Tools\PDF-XChangeViewerPortable\PDF-XChangeViewerPortable.exe"          & "|" & pRunDrive & "\Tools\Shortcuts\Player¥Viewer\"
     pFileInfo.Add "XnView.lnk"                                , pRunDrive & "\Tools\XnViewPortable\XnViewPortable.exe"                                & "|" & pRunDrive & "\Tools\Shortcuts\Player¥Viewer\"
-
 
     Select Case runKbn
 

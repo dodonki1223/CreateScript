@@ -9,7 +9,7 @@ Rem ************************************************************************
 
 Rem --------------------------- 設定 --------------------------- 
 Rem コマンドラインで検索できるEXEまでのパス
-Set ENScriptPath=%SystemRoot%\..\Tools\EvernotePortable\App\Evernote\ENScript.exe
+Set ENScriptPath=%ProgramFiles(x86)%\Evernote\Evernote\ENScript.exe
 
 Rem ---------------------- メイン処理部分 ---------------------- 
 Rem タイトル表示処理
@@ -51,7 +51,7 @@ Rem ***************************************************************
     Set /p SearchString= "検索する文字列の入力　＞　"
 
     Rem Evernoteの検索実行し、検索結果を表示
-    %ENScriptPath% showNotes /q "%SearchString%"
+    "%ENScriptPath%" showNotes /q "%SearchString%"
 
     Exit /b
 
