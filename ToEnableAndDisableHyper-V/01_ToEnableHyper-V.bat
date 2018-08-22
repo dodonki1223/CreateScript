@@ -31,17 +31,11 @@ Call :ChooseRunBatFile
 Rem 選択した実行batファイルを管理者で実行する
 Call :RunBatFileAsAdmin
 
-
-REM Rem 切り替えファイルを.envファイルに変更
-REM Call :SwitchChangeFileToEnvFile
-
 Rem 再起動を行うかどうかユーザーに対話
 Call :IsReStart
 
 Rem 終了処理
 Call :EndProcess
-
-Rem powershell start-process ToEnableHyper-V.bat -verb runas
 
 Rem ---------------------- ラベル処理部分 ---------------------- 
 
