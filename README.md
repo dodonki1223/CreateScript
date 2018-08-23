@@ -7,13 +7,22 @@
 - スタートアッププログラム一括終了スクリプト
 
 ### CheckIPAdrress
-- ipconfigコマンドで表示されるIPv4アドレスのIPアドレスをメッセージボックスで表示する
+- IPアドレスチェックスクリプト
 
 ### CreateSecretWindowShortCut
 - Chromeで特定のURLをシークレットウィンドウで実行するショートカットを作成する
 
+### CreateSymbolicLink
+- シンボリックリンク作成バッチ
+
+### CreateUrlFile
+- urlファイル作成スクリプト
+
+### ForcedTermination
+- EXE強制終了スクリプト
+
 ### SetWallPaper
-- レジストリを使用しデスクトップの壁紙情報を書き換える
+- デスクトップの壁紙変更スクリプト
 
 ### ShowShutdownWindowsDialog
 - 「Windowsのシャットダウン」ダイアログを表示するスクリプト
