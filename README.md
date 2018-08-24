@@ -21,6 +21,12 @@
 ### ForcedTermination
 - EXE強制終了スクリプト
 
+### MountVeraCryptFile
+- VeraCryptで仮想ディスクをマウント・アンマウントするバッチ
+
+### RunMicrosoftOffice
+- Microsoft Officeを実行するスクリプト
+
 ### SetWallPaper
 - デスクトップの壁紙変更スクリプト
 
