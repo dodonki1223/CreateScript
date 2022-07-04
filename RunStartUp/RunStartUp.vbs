@@ -411,6 +411,9 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     pFileInfo.Add "ダウンロード.lnk"                          , objAppli.Namespace(40).Self.Path & "\Downloads\"                                      & "|" & pRunDrive & "\Tools\Shortcuts\Favorite\"
     pFileInfo.Add "CreateScript.lnk"                          , pRunDrive & "\Tools\CreateScript"                                                     & "|" & pRunDrive & "\Tools\Shortcuts\Favorite\"
 
+    '★Windows（Applications）★
+    pFileInfo.Add "Applications.lnk"                          , "%windir%\explorer.exe"                                                               & "|" & pRunDrive & "\Tools\Shortcuts\Windows\"                    & "|" & "shell:appsfolder"
+
     '★Windows（アクセサリ）★
     pFileInfo.Add "Windows Media Player.lnk"                  , "%ProgramFiles(x86)%\Windows Media Player\wmplayer.exe"                               & "|" & pRunDrive & "\Tools\Shortcuts\Windows\アクセサリ\"
     pFileInfo.Add "コマンドプロンプト.lnk"                    , "%windir%\system32\cmd.exe"                                                           & "|" & pRunDrive & "\Tools\Shortcuts\Windows\アクセサリ\"         & "|" & ""                                         & "|" & "%windir%\system32\cmd.exe"                                       & "|" & "%windir%\system32"
