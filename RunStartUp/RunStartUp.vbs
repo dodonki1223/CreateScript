@@ -414,6 +414,13 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     '★Windows（Applications）★
     pFileInfo.Add "Applications.lnk"                          , "%windir%\explorer.exe"                                                               & "|" & pRunDrive & "\Tools\Shortcuts\Windows\"                    & "|" & "shell:appsfolder"
 
+    '★Windows（設定）★
+    pFileInfo.Add "設定.lnk"                                  , "%windir%\explorer.exe"                                                               & "|" & pRunDrive & "\Tools\Shortcuts\Windows\設定\"               & "|" & "ms-settings:"                             & "|" & "%WinDir%\System32\imageres.dll, 109"
+    pFileInfo.Add "マルチモニター.lnk"                        , "%windir%\system32\control.exe"                                                       & "|" & pRunDrive & "\Tools\Shortcuts\Windows\設定\"               & "|" & "desk.cpl"                                 & "|" & "%WinDir%\System32\imageres.dll, 186"
+    pFileInfo.Add "個人設定.lnk"                              , "%windir%\system32\control.exe"                                                       & "|" & pRunDrive & "\Tools\Shortcuts\Windows\設定\"               & "|" & "/name Microsoft.Personalization"          & "|" & "%WinDir%\System32\shell32.dll, 141"
+    pFileInfo.Add "Windows Update.lnk"                        , "%windir%\explorer.exe"                                                               & "|" & pRunDrive & "\Tools\Shortcuts\Windows\設定\"               & "|" & "ms-settings:windowsupdate"                & "|" & "%WinDir%\System32\shell32.dll, 46"
+    pFileInfo.Add "システム.lnk"                              , "%windir%\system32\control.exe"                                                       & "|" & pRunDrive & "\Tools\Shortcuts\Windows\設定\"               & "|" & "/name Microsoft.System"                   & "|" & "%WinDir%\System32\shell32.dll, 272"
+
     '★Windows（アクセサリ）★
     pFileInfo.Add "Windows Media Player.lnk"                  , "%ProgramFiles(x86)%\Windows Media Player\wmplayer.exe"                               & "|" & pRunDrive & "\Tools\Shortcuts\Windows\アクセサリ\"
     pFileInfo.Add "コマンドプロンプト.lnk"                    , "%windir%\system32\cmd.exe"                                                           & "|" & pRunDrive & "\Tools\Shortcuts\Windows\アクセサリ\"         & "|" & ""                                         & "|" & "%windir%\system32\cmd.exe"                                       & "|" & "%windir%\system32"
@@ -425,14 +432,11 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     pFileInfo.Add "電卓.lnk"                                  , "%windir%\system32\calc.exe"                                                          & "|" & pRunDrive & "\Tools\Shortcuts\Windows\アクセサリ\"
 
     '★Windows（コントロールパネル）★
-    pFileInfo.Add "Windows Update.lnk"                        , "%windir%\system32\wuapp.exe"                                                         & "|" & pRunDrive & "\Tools\Shortcuts\Windows\コントロールパネル\" & "|" & ""                                         & "|" & "%WinDir%\System32\shell32.dll, 46"
     pFileInfo.Add "コントロールパネル.lnk"                    , "%windir%\system32\control.exe"                                                       & "|" & pRunDrive & "\Tools\Shortcuts\Windows\コントロールパネル\"
-    pFileInfo.Add "システム.lnk"                              , "%windir%\system32\control.exe"                                                       & "|" & pRunDrive & "\Tools\Shortcuts\Windows\コントロールパネル\" & "|" & "/name Microsoft.System"                   & "|" & "%WinDir%\System32\shell32.dll, 272"
     pFileInfo.Add "デバイスマネージャー.lnk"                  , "%windir%\system32\devmgmt.msc"                                                       & "|" & pRunDrive & "\Tools\Shortcuts\Windows\コントロールパネル\"
     pFileInfo.Add "ネットワークと共有センター.lnk"            , "%windir%\system32\control.exe"                                                       & "|" & pRunDrive & "\Tools\Shortcuts\Windows\コントロールパネル\" & "|" & "/name Microsoft.NetworkAndSharingCenter"  & "|" & "%WinDir%\System32\shell32.dll, 276"
     pFileInfo.Add "フォルダーオプション.lnk"                  , "%windir%\system32\control.exe"                                                       & "|" & pRunDrive & "\Tools\Shortcuts\Windows\コントロールパネル\" & "|" & "folders"                                  & "|" & "%WinDir%\System32\shell32.dll, 110"
     pFileInfo.Add "プログラムの追加と削除.lnk"                , "%windir%\system32\appwiz.cpl"                                                        & "|" & pRunDrive & "\Tools\Shortcuts\Windows\コントロールパネル\" & "|" & ""                                         & "|" & "%WinDir%\System32\shell32.dll, 162"
-    pFileInfo.Add "個人設定.lnk"                              , "%windir%\system32\control.exe"                                                       & "|" & pRunDrive & "\Tools\Shortcuts\Windows\コントロールパネル\" & "|" & "/name Microsoft.Personalization"          & "|" & "%WinDir%\System32\shell32.dll, 141"
     pFileInfo.Add "電源オプション.lnk"                        , "%windir%\system32\powercfg.cpl"                                                      & "|" & pRunDrive & "\Tools\Shortcuts\Windows\コントロールパネル\" & "|" & ""                                         & "|" & "%windir%\system32\powercfg.cpl, 0"
 
     '★Windows（その他）★
