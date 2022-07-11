@@ -35,6 +35,9 @@ Sub Main()
     '--------------------------------------
     Dim runDrive : runDrive = objFSo.GetDriveName(WScript.ScriptFullName)
 
+    '--------------------------------------
+    ' シンボリックリンク作成処理
+    '--------------------------------------
     Call AddSymLinks(symLinks ,runDrive)
 
     For Each key In symLinks.Keys
@@ -42,14 +45,10 @@ Sub Main()
         '作成情報を切り分ける（①PortableApps管理下のフォルダ名、②インストール先フォルダ）
         Dim arySymLinks : arySymLinks = Split(symLinks(key), "|")
 
-        ' a = MsgBox("cmd /c mklink /d " & runDrive & "\Tools\PortableApps\" & arySymLinks(0) &  " " & arySymLinks(1), 0, "aaa")
-
+        'シンボリックリンク作成のコマンドを実行していく
         objShell.Run "cmd /c mklink /d " & runDrive & PORTABLE_APPS_DIRECTORY & arySymLinks(0) &  " " & arySymLinks(1), 0, false
 
     Next
-
-    ' objShell.Run "cmd /c mklink /d C:\Tools\PortableApps\7-ZipPortable C:\Tools\7-ZipPortable", 0, false
-
 
     '--------------------------------------
     ' オブジェクト破棄処理
@@ -57,6 +56,7 @@ Sub Main()
     Set objShell = Nothing
     Set objAppli = Nothing
     Set objFso   = Nothing
+
 End Sub
 
 
