@@ -1,17 +1,18 @@
-'**************************************************************************************
-'* プログラム名 ： スタートアップ処理スクリプト                                       *
-'* 処理概要     ： スタートアップ時に実行するスクリプト。実行されたドライブからOrchis *
-'*                 で使用するショートカットファイルのリンク先を作成し直す。           *
-'*                 スタートアップ時に実行されて欲しいプログラムを一括で実行する。     *
-'* メモ         ： このファイルをショートカットにしてコマンドライン引数を指定すること *
-'*                 ★使用例★                                                         *
-'*                   C:\Tools\CreateScript\RunStartUp\RunStartUp.vbs "House"          *
-'*                   C:\Tools\CreateScript\RunStartUp\RunStartUp.vbs "USB"            *
-'*                 ※実行する環境によりコマンドライン引数を変更する事                 *
-'*                 URLファイルの作成方法                                              *
-'*                   ファイル名を「○○○.url」形式にしショートカット先にURLを指定    *
-'* 設定         ： このスクリプトのデフォルト設定はUSBで実行されます                  *
-'**************************************************************************************
+'******************************************************************************************
+'* プログラム名 ： スタートアップ処理スクリプト                                           *
+'* 処理概要     ： スタートアップ時に実行するスクリプト。実行されたドライブからOrchisで使 *
+'*                 用するショートカットファイルのリンク先を作成し直す。                   *
+'*                 スタートアップ時に実行されて欲しいプログラムを一括で実行する。         *
+'*                 PortableAppsアプリで更新の管理をするためシンボリックリンクを作成する。 *
+'* メモ         ： このファイルをショートカットにしてコマンドライン引数を指定すること     *
+'*                 ★使用例★                                                             *
+'*                   C:\Tools\CreateScript\RunStartUp\RunStartUp.vbs "House"              *
+'*                   C:\Tools\CreateScript\RunStartUp\RunStartUp.vbs "USB"                *
+'*                 ※実行する環境によりコマンドライン引数を変更する事                     *
+'*                 URLファイルの作成方法                                                  *
+'*                   ファイル名を「○○○.url」形式にしショートカット先にURLを指定        *
+'* 設定         ： このスクリプトのデフォルト設定はUSBで実行されます                      *
+'******************************************************************************************
 
 '--------------------------------------
 ' 設定
@@ -115,6 +116,11 @@ Sub Main()
         shortCut.Save
 
     Next
+
+    '--------------------------------------
+    ' シンボリックリンク作成を実行
+    '--------------------------------------
+    objShell.Run runDrive & "\Tools\CreateScript\RunStartUp\CreateSymLinks.vbs"
 
     '--------------------------------------
     ' オブジェクト破棄処理
@@ -345,6 +351,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     pFileInfo.Add "Defraggler.lnk"                            , pRunDrive & "\Tools\DefragglerPortable\Defraggler64.exe"                              & "|" & pRunDrive & "\Tools\Shortcuts\Maintenance\"
     pFileInfo.Add "GPU-Z.lnk"                                 , pRunDrive & "\Tools\GPU-ZPortable\GPU-ZPortable.exe"                                  & "|" & pRunDrive & "\Tools\Shortcuts\Maintenance\"
     pFileInfo.Add "IObitUninstaller.lnk"                      , pRunDrive & "\Tools\IObitUninstallerPortable\IObitUninstallerPortable.exe"            & "|" & pRunDrive & "\Tools\Shortcuts\Maintenance\"
+    pFileInfo.Add "PortableApps.lnk"                          , pRunDrive & "\Tools\PortableApps\Start.exe"                                           & "|" & pRunDrive & "\Tools\Shortcuts\Maintenance\"
     pFileInfo.Add "ProcessExplorer.lnk"                       , pRunDrive & "\Tools\ProcessExplorerPortable\ProcessExplorerPortable.exe"              & "|" & pRunDrive & "\Tools\Shortcuts\Maintenance\"
     pFileInfo.Add "ProcessMonitor.lnk"                        , pRunDrive & "\Tools\ProcessMonitorPortable\ProcessMonitorPortable.exe"                & "|" & pRunDrive & "\Tools\Shortcuts\Maintenance\"
     pFileInfo.Add "SystemExplorer.lnk"                        , pRunDrive & "\Tools\SystemExplorerPortable\SystemExplorerPortable.exe"                & "|" & pRunDrive & "\Tools\Shortcuts\Maintenance\"
