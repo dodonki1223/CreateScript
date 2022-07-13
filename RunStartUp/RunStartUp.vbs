@@ -372,12 +372,12 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
 
         Case "House"
 
-            pFileInfo.Add "Docker Desktop.lnk"                        , """" & pRunDrive & "\Program Files\Docker\Docker\Docker Desktop.exe"""                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
-            pFileInfo.Add "GitBash.lnk"                               , """" & pRunDrive & "\Program Files\Git\git-bash.exe"""                                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & ""                                         & "|" & """" & pRunDrive & "\Program Files\Git\git-bash.exe"""            & "|" & "%UserProfile%"
-            pFileInfo.Add "GitKraken.lnk"                             , "%UserProfile%\AppData\Local\gitkraken\Update.exe"                                    & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & "--processStart gitkraken.exe"
-            pFileInfo.Add "Oracle VM VirtualBox.lnk"                  , """" & pRunDrive & "\Program Files\Oracle\VirtualBox\VirtualBox.exe"""                & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
-            ' pFileInfo.Add "Visual Studio 2017.lnk"                    , "%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe"   & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
-
+            pFileInfo.Add "Docker Desktop.lnk"                        , """" & pRunDrive & "\Program Files\Docker\Docker\Docker Desktop.exe"""                              & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
+            pFileInfo.Add "GitBash.lnk"                               , """" & pRunDrive & "\Program Files\Git\git-bash.exe"""                                              & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & ""                                         & "|" & """" & pRunDrive & "\Program Files\Git\git-bash.exe"""            & "|" & "%UserProfile%"
+            pFileInfo.Add "GitKraken.lnk"                             , "%UserProfile%\AppData\Local\gitkraken\Update.exe"                                                  & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & "--processStart gitkraken.exe"
+            pFileInfo.Add "Oracle VM VirtualBox.lnk"                  , """" & pRunDrive & "\Program Files\Oracle\VirtualBox\VirtualBox.exe"""                              & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
+            pFileInfo.Add "Visual Studio 2022.lnk"                    , """" & pRunDrive & "\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\devenv.exe""" & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
+            pFileInfo.Add "Windows Terminal.lnk"                      , "%windir%\system32\cmd.exe"                                                                         & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & "/c wt.exe"                                & "|"  & "%windir%\system32\cmd.exe"
 
     End Select
 
