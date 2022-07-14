@@ -53,9 +53,10 @@ Sub Main()
     'Dictionaryに格納されているプログラム数分繰り返す
     For Each mExeName In mExitExes.Keys
 
-		    'プログラムの終了処理
+        'プログラムの終了処理
         For Each Process in GetObject("winmgmts:{impersonationLevel=impersonate}").ExecQuery("select * from Win32_Process where Name='" & mExitExes(mExeName) & "'")
 
+            WScript.Sleep 1000
             Process.terminate
 
         Next
@@ -91,19 +92,6 @@ End Sub
 '***********************************************************************
 Function AddExitExe(ByVal pExitExes)
 
-    '7+ Taskbar Tweakerの終了可否
-    Dim mIsRun7TaskbarTweaker : mIsRun7TaskbarTweaker = IsRunProgram("7+ Taskbar Tweaker.ex2")
-    If mIsRun7TaskbarTweaker = True Then
-
-        Dim mIsRun7TaskbarTweakerExitResult : mIsRun7TaskbarTweakerExitResult = GetSelectedUserResultForExitProgram("7+ Taskbar Tweakerを終了しますか？", "7+ Taskbar Tweaker終了可否")
-        If mIsRun7TaskbarTweakerExitResult = vbYes Then
-
-            pExitExes.Add "7+ Taskbar Tweaker" , "7+ Taskbar Tweaker.ex2"
-
-        End If
-
-    End If
-
     'AkabeiMonitorの終了可否
     Dim mIsRunAkabeiMonitor : mIsRunAkabeiMonitor = IsRunProgram("akamoni.exe")
     If mIsRunAkabeiMonitor = True Then
@@ -130,19 +118,6 @@ Function AddExitExe(ByVal pExitExes)
 
     End If
 
-    'befooの終了可否
-    Dim mIsRunbefoo : mIsRunbefoo = IsRunProgram("befooPtan.exe")
-    If mIsRunbefoo = True Then
-
-        Dim mbefooExitResult : mbefooExitResult  = GetSelectedUserResultForExitProgram("befooを終了しますか？", "befoo終了可否")
-        If mbefooExitResult = vbYes Then
-
-            pExitExes.Add "befoo", "befooPtan.exe"
-
-        End If
-
-    End If
-    
     'BijinTokeiGadgetの終了可否
     Dim mIsRunBijinTokeiGadget : mIsRunBijinTokeiGadget = IsRunProgram("BijinTokeiGadget.exe")
     If mIsRunBijinTokeiGadget = True Then
@@ -170,21 +145,6 @@ Function AddExitExe(ByVal pExitExes)
 
     End If
 
-
-
-    'Chronusの終了可否
-    Dim mIsRunChronus : mIsRunChronus = IsRunProgram("Chronus.exe")
-    If mIsRunChronus = True Then
-
-        Dim mChronusExitResult : mChronusExitResult  = GetSelectedUserResultForExitProgram("Chronusを終了しますか？", "Chronus終了可否")
-        If mChronusExitResult = vbYes Then
-
-            pExitExes.Add "Chronus", "Chronus.exe"
-
-        End If
-
-    End If
-
     'Cliborの終了可否
     Dim mIsRunClibor : mIsRunClibor = IsRunProgram("Clibor.exe")
     If mIsRunClibor = True Then
@@ -198,49 +158,20 @@ Function AddExitExe(ByVal pExitExes)
 
     End If
 
-    'Evernoteの終了可否
-    Dim mIsRunEvernote : mIsRunEvernote = IsRunProgram("Evernote.exe")
-    If mIsRunEvernote = True Then
-
-        Dim mEvernoteExitResult : mEvernoteExitResult = GetSelectedUserResultForExitProgram("Evernoteを終了しますか？", "Evernote終了可否")
-        If mEvernoteExitResult = vbYes Then
-
-            pExitExes.Add "Evernote"        , "Evernote.exe"
-            pExitExes.Add "EvernoteClipper" , "EvernoteClipper.exe"
-            pExitExes.Add "EvernotePortable", "EvernotePortable.exe"
-            pExitExes.Add "EvernoteTray"    , "EvernoteTray.exe"
-
-        End If
-
-    End If
-
     'GoogleDriveの終了可否
-    Dim mIsRunGoogleDrive : mIsRunGoogleDrive = IsRunProgram("googledrivesync.exe")
+    Dim mIsRunGoogleDrive : mIsRunGoogleDrive = IsRunProgram("GoogleDriveFS.exe")
     If mIsRunGoogleDrive = True Then
 
         Dim mGoogleDriveExitResult : mGoogleDriveExitResult = GetSelectedUserResultForExitProgram("GoogleDriveを終了しますか？", "GoogleDrive終了可否")
         If mGoogleDriveExitResult = vbYes Then
 
-            pExitExes.Add "GoogleDrive", "googledrivesync.exe"
+            pExitExes.Add "GoogleDrive", "GoogleDriveFS.exe"
 
         End If
 
     End If
 
-    'Freeraserの終了可否
-    Dim mIsRunFreeraser : mIsRunFreeraser = IsRunProgram("Freeraser.exe")
-    If mIsRunFreeraser = True Then
-
-        Dim mFreeraserExitResult : mFreeraserExitResult = GetSelectedUserResultForExitProgram("Freeraserを終了しますか？", "Freeraser終了可否")
-        If mFreeraserExitResult = vbYes Then
-
-            pExitExes.Add "Freeraser", "Freeraser.exe"
-
-        End If
-
-    End If
-
-    'MouseGestureLの終了可否
+    'MouseGestureLの終了可否（なぜか１回目は失敗する、２回目以降に成功する
     Dim mIsRunMouseGestureL : mIsRunMouseGestureL = IsRunProgram("MouseGestureL.exe")
     If mIsRunMouseGestureL = True Then
 
@@ -267,32 +198,6 @@ Function AddExitExe(ByVal pExitExes)
 
     End If
 
-    'RocketDockの終了可否
-    Dim mIsRunRocketDock : mIsRunRocketDock = IsRunProgram("RocketDock.exe")
-    If mIsRunRocketDock = True Then
-
-        Dim mRocketDockExitResult : mRocketDockExitResult  = GetSelectedUserResultForExitProgram("RocketDockを終了しますか？", "RocketDock終了可否")
-        If mRocketDockExitResult = vbYes Then
-
-            pExitExes.Add "RocketDock", "RocketDock.exe"
-
-        End If
-
-    End If
-
-    'Rss速報の終了可否
-    Dim mIsRunRssNews : mIsRunRssNews = IsRunProgram("RssNews.exe")
-    If mIsRunRssNews = True Then
-
-        Dim mRssNewsExitResult : mRssNewsExitResult  = GetSelectedUserResultForExitProgram("Rss速報を終了しますか？", "Rss速報終了可否")
-        If mRssNewsExitResult = vbYes Then
-
-            pExitExes.Add "RssNews", "RssNews.exe"
-
-        End If
-
-    End If
-
     'Slackの終了可否
     Dim mIsRunSlack : mIsRunSlack = IsRunProgram("slack.exe")
     If mIsRunSlack = True Then
@@ -306,33 +211,7 @@ Function AddExitExe(ByVal pExitExes)
 
     End If
 
-    'Stickiesの終了可否
-    Dim mIsRunStickies : mIsRunStickies = IsRunProgram("Stickies.exe")
-    If mIsRunStickies = True Then
-
-        Dim mStickiesExitResult : mStickiesExitResult  = GetSelectedUserResultForExitProgram("Stickiesを終了しますか？", "Stickies終了可否")
-        If mStickiesExitResult = vbYes Then
-
-            pExitExes.Add "Stickies", "Stickies.exe"
-
-        End If
-
-    End If
-
-    'SuperF4の終了可否
-    Dim mIsRunSuperF4 : mIsRunSuperF4 = IsRunProgram("SuperF4.exe")
-    If mIsRunSuperF4 = True Then
-
-        Dim mSuperF4ExitResult : mSuperF4ExitResult = GetSelectedUserResultForExitProgram("SuperF4を終了しますか？", "SuperF4終了可否")
-        If mSuperF4ExitResult = vbYes Then
-
-            pExitExes.Add "SuperF4", "SuperF4.exe"
-
-        End If
-
-    End If
-
-    'WheelAcceleの終了可否
+    'WheelAcceleの終了可否（なぜか１回目は失敗する、２回目以降に成功する
     Dim mIsRunWheelAccele : mIsRunWheelAccele = IsRunProgram("WheelAccele.exe")
     If mIsRunWheelAccele = True Then
 
@@ -354,32 +233,6 @@ Function AddExitExe(ByVal pExitExes)
 
             pExitExes.Add "X-Finder32" , "XF.exe"
             pExitExes.Add "X-Finder64" , "xf64.exe"
-
-        End If
-
-    End If
-
-    '机上予報の終了可否
-    Dim mIsRunWeather : mIsRunWeather = IsRunProgram("Weather64.exe")
-    If mIsRunWeather = True Then
-
-        Dim mRunWeatherExitResult : mRunWeatherExitResult  = GetSelectedUserResultForExitProgram("机上予報を終了しますか？", "机上予報終了可否")
-        If mRunWeatherExitResult = vbYes Then
-
-            pExitExes.Add "Weather", "Weather64.exe"
-
-        End If
-
-    End If
-
-    '棒読みちゃんの終了可否
-    Dim mIsRunBouyomiChan : mIsRunBouyomiChan = IsRunProgram("BouyomiChan.exe")
-    If mIsRunBouyomiChan = True Then
-
-        Dim mBouyomiChanExitResult : mBouyomiChanExitResult  = GetSelectedUserResultForExitProgram("棒読みちゃんを終了しますか？", "棒読みちゃん終了可否")
-        If mBouyomiChanExitResult = vbYes Then
-
-            pExitExes.Add "BouyomiChan", "BouyomiChan.exe"
 
         End If
 
