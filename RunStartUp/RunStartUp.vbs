@@ -296,13 +296,14 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     End Select
 
     '★OftenUse★
-    pFileInfo.Add "FolderFileList.lnk"                        , pRunDrive & "\Tools\FolderFileList\FolderFileList.exe"                                & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
-    pFileInfo.Add "FolderFileListDebug.lnk"                   , pRunDrive & "\Tools\FolderFileList\FolderFileList_Debug.exe"                          & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
     pFileInfo.Add "00_ImageForClipboard.lnk"                  , pRunDrive & "\Tools\ImageForClipboard\ImageForClipboard.exe"                          & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\ImageForClipboard\"
     pFileInfo.Add "01_ヘルプ.lnk"                             , pRunDrive & "\Tools\ImageForClipboard\ImageForClipboard.exe"                          & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\ImageForClipboard\"         & "|" & "/?"
     pFileInfo.Add "02_クリップボード内の画像を表示.lnk"       , pRunDrive & "\Tools\ImageForClipboard\ImageForClipboard.exe"                          & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\ImageForClipboard\"         & "|" & "/AutoClose 5 /ImageSize 40"
     pFileInfo.Add "03_クリップボード内の画像を保存.lnk"       , pRunDrive & "\Tools\ImageForClipboard\ImageForClipboard.exe"                          & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\ImageForClipboard\"         & "|" & "/AutoClose 2 /ImageSize 40 /AutoSave %UserProfile%\Downloads\ /Extension png"
+    pFileInfo.Add "FolderFileList.lnk"                        , pRunDrive & "\Tools\FolderFileList\FolderFileList.exe"                                & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
+    pFileInfo.Add "FolderFileListDebug.lnk"                   , pRunDrive & "\Tools\FolderFileList\FolderFileList_Debug.exe"                          & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
     pFileInfo.Add "ReduceMemory.lnk"                          , pRunDrive & "\Tools\ReduceMemory\ReduceMemory.exe"                                    & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
+    pFileInfo.Add "TablacusExplorer.lnk"                      , pRunDrive & "\Tools\TablacusExplorer\TE64.exe"                                        & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
     pFileInfo.Add "TeamViewer.lnk"                            , pRunDrive & "\Tools\TeamViewerPortable\TeamViewerPortable.exe"                        & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
     pFileInfo.Add "Visual Studio Code.lnk"                    , """" & "%UserProfile%\AppData\Local\Programs\Microsoft VS Code\Code.exe"""            & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
     pFileInfo.Add "X-Finder.lnk"                              , pRunDrive & "\Tools\X-Finder\xf64.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
