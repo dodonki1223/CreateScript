@@ -149,14 +149,6 @@ Function AddRunFile(ByRef pRunFile,ByVal pRunDrive,ByRef pOrchisDirectory)
     ' ファイル情報を設定していく
     ' ※キー：ファイル名、項目：ファイルパス
     '--------------------------------------
-    'ファイラー起動可否 いいえが押された時はX-Finderを起動しない(起動ファイル格納Dictionaryに追加しない)
-    Dim msgRunFilerResult : msgRunFilerResult = MsgBox("ファイラーを起動しますか？", vbYesNo, "ファイラー起動可否")
-    If msgRunFilerResult = vbYes Then
-
-        pRunFile.Add "X-Finder"           , pRunDrive & "\Tools\X-Finder\xf64.exe"
-
-    End If
-
     'マウス存在可否 いいえが押された時はMouseGestureLを起動しない(起動ファイル格納Dictionaryに追加しない)
     Dim msgMouseExistResult : msgMouseExistResult = MsgBox("お使いのパソコンにマウスはありますか？", vbYesNo, "マウス存在可否")
     If msgMouseExistResult = vbYes Then
@@ -195,64 +187,23 @@ Function AddRunFile(ByRef pRunFile,ByVal pRunDrive,ByRef pOrchisDirectory)
 
     pRunFile.Add "Clibor"             , pRunDrive & "\Tools\clibor\Clibor.exe"
     pRunFile.Add "AutoHotKeyTool"     , pRunDrive & "\Tools\AutoHotKey\AutoHotKeyTool.exe"
-    pRunFile.Add "AkabeiMonitor"      , pRunDrive & "\Tools\AkabeiMonitor\akamoni.exe"
 
     Select Case runKbn
 
         Case "House"
 
-            pRunFile.Add "BijinTokeiGadget"   , pRunDrive & "\Tools\BijinTokeiGadget\BijinTokeiGadget.exe"
-            pRunFile.Add "BijoLinuxGadget"    , pRunDrive & "\Tools\BijoLinuxGadget\BijoLinuxGadget.exe"
+            pRunFile.Add "AkabeiMonitor"      , pRunDrive & "\Tools\AkabeiMonitor\akamoni.exe"
             pRunFile.Add "T-Clock"            , pRunDrive & "\Tools\T-Clock\Clock64.exe"
             pRunFile.Add "Slack"              , """" & "%UserProfile%\AppData\Local\slack\slack.exe"""
-            pRunFile.Add "GoogleDrive"        , """" & pRunDrive & "\Program Files\Google\Drive File Stream\59.0.3.0\GoogleDriveFS.exe"""
+            pRunFile.Add "Orchis"             , """" & pRunDrive & "\Program Files\Orchis\orchis.exe""" 'インストール版
+            ' GoogleDriveの実行はバージョン情報が結構かわりスクリプトが壊れるのでコメントアウト
+            ' pRunFile.Add "GoogleDrive"        , """" & pRunDrive & "\Program Files\Google\Drive File Stream\84.0.13.0\GoogleDriveFS.exe"""
+
+        Case "USB"
+
+            pRunFile.Add "Orchis"             , pRunDrive & "\Tools\orchis\orchis-p.exe"               'ポータブル版
 
     End Select
-
-    '実行ドライブ文字列を取得
-    Dim driveStr : driveStr = Left(pRunDrive, 1)
-
-    'ドライブごと起動するOrchisを変更する
-    Select Case driveStr
-
-        Case "C"
-
-            Select Case runKbn
-
-                Case "House"
-
-                    pOrchisDirectory = """" & pRunDrive & "\Program Files\Orchis\orchis.exe""" 'インストール版
-
-                Case "USB"
-
-                    orchisDirectory = pRunDrive & "\Tools\orchisC\orchis-p.exe"               'ポータブル版
-
-            End Select
-
-        Case "D"
-
-             pOrchisDirectory = pRunDrive & "\Tools\orchisD\orchis-p.exe"
-
-        Case "E"
-
-            pOrchisDirectory = pRunDrive & "\Tools\orchisE\orchis-p.exe"
-
-        Case "F"
-
-            pOrchisDirectory = pRunDrive & "\Tools\orchisF\orchis-p.exe"
-
-        Case "G"
-
-            pOrchisDirectory = pRunDrive & "\Tools\orchisG\orchis-p.exe"
-
-        Case "H"
-
-            pOrchisDirectory = pRunDrive & "\Tools\orchisH\orchis-p.exe"
-
-        Case Else
-
-    End Select
-    pRunFile.Add "Orchis"             , pOrchisDirectory
 
 End Function
 
@@ -289,9 +240,10 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
 
         Case "House"
 
-            pFileInfo.Add "GoogleDrive.lnk"                           , """" & pRunDrive & "\Program Files\Google\Drive File Stream\59.0.3.0\GoogleDriveFS.exe""" & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
-            pFileInfo.Add "Slack.lnk"                                 , """" & "%UserProfile%\AppData\Local\slack\slack.exe"""                                    & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
-            pFileInfo.Add "Logicool Options.lnk"                      , """" & pRunDrive & "\Program Files\Logicool\LogiOptions\LogiOptions.exe"""                & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
+            ' GoogleDriveの実行はバージョン情報が結構かわりスクリプトが壊れるのでコメントアウト
+            ' pFileInfo.Add "GoogleDrive.lnk"                           , """" & pRunDrive & "\Program Files\Google\Drive File Stream\84.0.13.0\GoogleDriveFS.exe""" & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
+            pFileInfo.Add "Slack.lnk"                                 , """" & "%UserProfile%\AppData\Local\slack\slack.exe"""                                     & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
+            pFileInfo.Add "Logicool Options.lnk"                      , """" & pRunDrive & "\Program Files\Logicool\LogiOptions\LogiOptions.exe"""                 & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
 
     End Select
 
@@ -305,7 +257,6 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     pFileInfo.Add "ReduceMemory.lnk"                          , pRunDrive & "\Tools\ReduceMemory\ReduceMemory.exe"                                    & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
     pFileInfo.Add "TablacusExplorer.lnk"                      , pRunDrive & "\Tools\TablacusExplorer\TE64.exe"                                        & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
     pFileInfo.Add "TeamViewer.lnk"                            , pRunDrive & "\Tools\TeamViewerPortable\TeamViewerPortable.exe"                        & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
-    pFileInfo.Add "Visual Studio Code.lnk"                    , """" & "%UserProfile%\AppData\Local\Programs\Microsoft VS Code\Code.exe"""            & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
     pFileInfo.Add "X-Finder.lnk"                              , pRunDrive & "\Tools\X-Finder\xf64.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
 
     Select Case runKbn
@@ -313,6 +264,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
         Case "House"
 
             pFileInfo.Add "GoogleChrome.lnk"                          , """" & pRunDrive & "\Program Files\Google\Chrome\Application\chrome.exe"""                & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
+            pFileInfo.Add "Visual Studio Code.lnk"                    , """" & "%UserProfile%\AppData\Local\Programs\Microsoft VS Code\Code.exe"""                & "|" & pRunDrive & "\Tools\Shortcuts\OftenUse\"
 
         Case "USB"
 
@@ -323,6 +275,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     '★FileEdit★
     pFileInfo.Add "GIMP.lnk"                                  , pRunDrive & "\Tools\GIMPPortable\GIMPPortable.exe"                                    & "|" & pRunDrive & "\Tools\Shortcuts\FileEdit\"
     pFileInfo.Add "Greenshot.lnk"                             , pRunDrive & "\Tools\Greenshot\Greenshot.exe"                                          & "|" & pRunDrive & "\Tools\Shortcuts\FileEdit\"
+    pFileInfo.Add "HandBrake.lnk"                             , pRunDrive & "\Tools\HandBrake\HandBrake.exe"                                        & "|" & pRunDrive & "\Tools\Shortcuts\FileEdit\"
     pFileInfo.Add "ImgBurn.lnk"                               , pRunDrive & "\Tools\ImgBurnPortable\ImgBurn.exe"                                      & "|" & pRunDrive & "\Tools\Shortcuts\FileEdit\"
     pFileInfo.Add "PDFTKBuilder.lnk"                          , pRunDrive & "\Tools\PDFTKBuilderPortable\PDFTKBuilderPortable.exe"                    & "|" & pRunDrive & "\Tools\Shortcuts\FileEdit\"
     pFileInfo.Add "PSSTPSST.lnk"                              , pRunDrive & "\Tools\PSSTPSST\PSSTPSST.exe"                                            & "|" & pRunDrive & "\Tools\Shortcuts\FileEdit\"
@@ -378,6 +331,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
             pFileInfo.Add "GitKraken.lnk"                             , "%UserProfile%\AppData\Local\gitkraken\Update.exe"                                                  & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & "--processStart gitkraken.exe"
             pFileInfo.Add "Oracle VM VirtualBox.lnk"                  , """" & pRunDrive & "\Program Files\Oracle\VirtualBox\VirtualBox.exe"""                              & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
             pFileInfo.Add "Visual Studio 2022.lnk"                    , """" & pRunDrive & "\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\devenv.exe""" & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
+            pFileInfo.Add "Visual Studio Code.lnk"                    , """" & "%UserProfile%\AppData\Local\Programs\Microsoft VS Code\Code.exe"""                          & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
             pFileInfo.Add "Windows Terminal.lnk"                      , "%windir%\system32\cmd.exe"                                                                         & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & "/c wt.exe"                                & "|"  & "%windir%\system32\cmd.exe"
 
     End Select
