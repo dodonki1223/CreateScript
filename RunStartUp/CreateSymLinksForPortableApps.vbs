@@ -45,8 +45,18 @@ Sub Main()
         '作成情報を切り分ける（①PortableApps管理下のフォルダ名、②インストール先フォルダ）
         Dim arySymLinks : arySymLinks = Split(symLinks(key), "|")
 
+        'SymLinkの作成先とリンク先のディレクトリを取得する
+        Dim symLinkPath       : symLinkPath = runDrive & PORTABLE_APPS_DIRECTORY & arySymLinks(0)
+        Dim symLinkTargetPath : symLinkTargetPath = arySymLinks(1)
+
+        '作成先のSymLinkが既にあるとエラーになるため事前に削除して強制的に再作成させる
+        if objFso.FolderExists(symLinkPath) then
+            objShell.Run "cmd /c rmdir " & symLinkPath, 0, false
+        end if
+
         'シンボリックリンク作成のコマンドを実行していく
-        objShell.Run "cmd /c mklink /d " & runDrive & PORTABLE_APPS_DIRECTORY & arySymLinks(0) &  " " & arySymLinks(1), 0, false
+        'USBなどのデフォルトのファイルシステムのFat系だとシンボリックリンクの作成ができないためNTFSにあらかじめフォーマットする必要がある
+        objShell.Run "cmd /c mklink /d " & symLinkPath &  " " & symLinkTargetPath, 0, false
 
     Next
 

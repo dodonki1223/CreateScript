@@ -118,9 +118,14 @@ Sub Main()
     Next
 
     '--------------------------------------
-    ' シンボリックリンク作成を実行
+    ' PortableAppsのシンボリックリンク作成を実行
     '--------------------------------------
-    objShell.Run runDrive & "\Tools\CreateScript\RunStartUp\CreateSymLinks.vbs"
+    objShell.Run runDrive & "\Tools\CreateScript\RunStartUp\CreateSymLinksForPortableApps.vbs"
+
+    '--------------------------------------
+    ' PortableAppsのシンボリックリンク作成を実行
+    '--------------------------------------
+    objShell.Run runDrive & "\Tools\CreateScript\RunStartUp\CreateSymLinksForAutoHotKeyTool.vbs"
 
     '--------------------------------------
     ' オブジェクト破棄処理
@@ -331,7 +336,6 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
             pFileInfo.Add "GitKraken.lnk"                             , "%UserProfile%\AppData\Local\gitkraken\Update.exe"                                                  & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & "--processStart gitkraken.exe"
             pFileInfo.Add "Oracle VM VirtualBox.lnk"                  , """" & pRunDrive & "\Program Files\Oracle\VirtualBox\VirtualBox.exe"""                              & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
             pFileInfo.Add "Visual Studio 2022.lnk"                    , """" & pRunDrive & "\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\devenv.exe""" & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
-            pFileInfo.Add "Visual Studio Code.lnk"                    , """" & "%UserProfile%\AppData\Local\Programs\Microsoft VS Code\Code.exe"""                          & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
             pFileInfo.Add "Windows Terminal.lnk"                      , "%windir%\system32\cmd.exe"                                                                         & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & "/c wt.exe"                                & "|"  & "%windir%\system32\cmd.exe"
 
     End Select
