@@ -142,7 +142,7 @@ End Sub
 '* 処理名   ： 実行対象ファイルの追加処理                              *
 '* 引数     ： pRunFile         実行対象ファイル格納Dictionary         *
 '*             pRunDrive        実行ドライブパス                       *
-'*             pOrchisDirectory Orchisの実行ドライブ格納変数           *
+'*             pOrchisDirectory Orchisの実行ディレクトリ格納変数       *
 '* 処理内容 ： 実行対象のファイル情報をDictionaryに追加する            *
 '*             一部のプログラムはユーザーに対話して追加するか問う      *
 '* 戻り値   ： pRunFile                                                *
@@ -197,16 +197,20 @@ Function AddRunFile(ByRef pRunFile,ByVal pRunDrive,ByRef pOrchisDirectory)
 
         Case "House"
 
+            pOrchisDirectory = """" & pRunDrive & "\Program Files\Orchis\orchis.exe"""
+
             pRunFile.Add "AkabeiMonitor"      , pRunDrive & "\Tools\AkabeiMonitor\akamoni.exe"
             pRunFile.Add "T-Clock"            , pRunDrive & "\Tools\T-Clock\Clock64.exe"
             pRunFile.Add "Slack"              , """" & "%UserProfile%\AppData\Local\slack\slack.exe"""
-            pRunFile.Add "Orchis"             , """" & pRunDrive & "\Program Files\Orchis\orchis.exe""" 'インストール版
+            pRunFile.Add "Orchis"             , pOrchisDirectory 'インストール版
             ' GoogleDriveの実行はバージョン情報が結構かわりスクリプトが壊れるのでコメントアウト
             ' pRunFile.Add "GoogleDrive"        , """" & pRunDrive & "\Program Files\Google\Drive File Stream\84.0.13.0\GoogleDriveFS.exe"""
 
         Case "USB"
 
-            pRunFile.Add "Orchis"             , pRunDrive & "\Tools\orchis\orchis-p.exe"               'ポータブル版
+            pOrchisDirectory = pRunDrive & "\Tools\orchis\orchis-p.exe"
+
+            pRunFile.Add "Orchis"             , pOrchisDirectory               'ポータブル版
 
     End Select
 
@@ -237,7 +241,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
     pFileInfo.Add "BijoLinuxGadget.lnk"                       , pRunDrive & "\Tools\BijoLinuxGadget\BijoLinuxGadget.exe"                              & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
     pFileInfo.Add "Clibor.lnk"                                , pRunDrive & "\Tools\clibor\Clibor.exe"                                                & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
     pFileInfo.Add "MouseGestureL.lnk"                         , pRunDrive & "\Tools\MouseGestureL\MouseGestureL.exe"                                  & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
-    pFileInfo.Add "Orchis.lnk"                                , pOrchisDirectory                                                                      & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"                            & "|" & ""                                 & "|" & pRunDrive & "\Program Files\Orchis\orchis.exe"
+    pFileInfo.Add "Orchis.lnk"                                , pOrchisDirectory                                                                      & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"                            & "|" & ""                                 & "|" & pOrchisDirectory
     pFileInfo.Add "WheelAccele.lnk"                           , pRunDrive & "\Tools\WheelAccele\WheelAccele.exe"                                      & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
     pFileInfo.Add "T-Clock.lnk"                               , pRunDrive & "\Tools\T-Clock\Clock64.exe"                                              & "|" & pRunDrive & "\Tools\Shortcuts\StartUp\"
 
@@ -336,6 +340,7 @@ Function AddShortCutFile(ByRef pFileInfo,ByVal pRunDrive,ByVal pOrchisDirectory)
             pFileInfo.Add "GitKraken.lnk"                             , "%UserProfile%\AppData\Local\gitkraken\Update.exe"                                                  & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & "--processStart gitkraken.exe"
             pFileInfo.Add "Oracle VM VirtualBox.lnk"                  , """" & pRunDrive & "\Program Files\Oracle\VirtualBox\VirtualBox.exe"""                              & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
             pFileInfo.Add "Visual Studio 2022.lnk"                    , """" & pRunDrive & "\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\devenv.exe""" & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
+            pFileInfo.Add "Visual Studio Code.lnk"                    , """" & "%UserProfile%\AppData\Local\Programs\Microsoft VS Code\Code.exe"""                          & "|" & pRunDrive & "\Tools\Shortcuts\Development\"
             pFileInfo.Add "Windows Terminal.lnk"                      , "%windir%\system32\cmd.exe"                                                                         & "|" & pRunDrive & "\Tools\Shortcuts\Development\"                & "|" & "/c wt.exe"                                & "|"  & "%windir%\system32\cmd.exe"
 
     End Select
